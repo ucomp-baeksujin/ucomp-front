@@ -1,0 +1,236 @@
+// mixin
+// 텍스트 미노출 @include hidden;
+@mixin hidden($mode: &) {
+	overflow: hidden;
+	position: absolute;
+	top: -9999em;
+	left: -9999em;
+	// visibility: hidden;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	line-height: 1px;
+	font-size: 1px;
+	border: 0;
+	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
+	pointer-events: none;
+
+	@if $mode ==& {
+		display: block;
+		position: absolute;
+	}
+}
+
+// sass 최상단 부모 클래스 선택 @include most-outer-selector(".temp");
+@mixin most-outer-selector($new-class) {
+	$current-selector: &;
+	$new-selector: (
+	);
+
+@each $item in $current-selector {
+	$first-item: nth($item, 1);
+
+	$appended-item: $first-item + $new-class;
+
+	$new-item: set-nth($item, 1, $appended-item);
+	$new-selector: append($new-item, $new-selector);
+}
+
+@at-root #{$new-selector} {
+	@content;
+}
+}
+
+// root 클래스 선택 @include root-selector('.laptop');
+@mixin root-selector($new-class) {
+	$root-selector: html;
+	$current-selector: &;
+	$new-selector: ();
+
+	@each $item in $current-selector {
+		$first-item: nth($item, 1);
+
+		$appended-item: $root-selector + $new-class + ' ' + $first-item;
+
+		$new-item: set-nth($item, 1, $appended-item);
+		$new-selector: append($new-item, $new-selector);
+	}
+
+	@at-root #{$new-selector} {
+		@content;
+	}
+}
+
+// @inlcude clear;
+@mixin clear {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+// @inlcude ellipsis(3);
+@mixin ellipsis($line: 1) {
+	@if ($line ==1) {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	@else {
+		display: -webkit-box;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: $line;
+	}
+}
+
+// overflow scroll 	@include overflow-scroll(default, dark, large, y);
+@mixin overflow-scroll($mode: default, $theme: dark, $outline: medium, $scroll: &) {
+	@if $mode ==default {
+
+		// mobile
+		@include root-selector('.mobile') {
+			@if $scroll ==& {
+				overflow: auto;
+			}
+
+			@if $scroll ==x {
+				overflow-x: auto;
+				overflow-y: hidden;
+			}
+
+			@if $scroll ==y {
+				overflow-x: hidden;
+				overflow-y: auto;
+			}
+		}
+
+		// laptop
+		@include root-selector('.laptop') {
+			-webkit-overflow-scrolling: touch;
+
+			&::-webkit-scrollbar-thumb {
+				border-width: 4px;
+				border-style: solid;
+				border-color: transparent;
+				background-clip: content-box;
+
+				@if $theme ==dark {
+					background-color: rgba(0, 0, 0, 0.2);
+
+					&:hover {
+						background-color: rgba(0, 0, 0, 0.4)
+					}
+
+					&:active {
+						background-color: rgba(0, 0, 0, 0.6)
+					}
+				}
+
+				@if $theme ==light {
+					background-color: rgba(255, 255, 255, 0.4);
+
+					&:hover {
+						background-color: rgba(255, 255, 255, 0.6)
+					}
+
+					&:active {
+						background-color: rgba(255, 255, 255, 0.8)
+					}
+				}
+			}
+
+			@if $outline ==large {
+				&::-webkit-scrollbar {
+					width: 16px;
+					height: 16px;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					border-radius: 8px;
+				}
+			}
+
+			@if $outline ==medium {
+				&::-webkit-scrollbar {
+					width: 12px;
+					height: 12px;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					border-radius: 6px;
+				}
+			}
+
+			@if $scroll ==x {
+				overflow-x: overlay;
+				overflow-y: hidden;
+			}
+
+			@if $scroll ==y {
+				overflow-x: hidden;
+				overflow-y: overlay;
+			}
+
+			@if $scroll ==& {
+				overflow: overlay;
+			}
+		}
+	}
+}
+
+// 이하 @include respond-below(breakpoint-xl)
+@mixin respond-below($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		$breakpoint-value: map-get($breakpoints, $breakpoint);
+
+		@media (max-width: ($breakpoint-value - 1)) {
+			@content;
+		}
+	}
+
+	@else {
+		@warn 'Invalid breakpoint: #{$breakpoint}.';
+	}
+}
+
+// 이상 @include respond-above(breakpoint-xl)
+@mixin respond-above($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		$breakpoint-value: map-get($breakpoints, $breakpoint);
+
+		@media (min-width: $breakpoint-value) {
+			@content;
+		}
+	}
+
+	@else {
+		@warn 'Invalid breakpoint: #{$breakpoint}.';
+	}
+}
+
+// 사이 @include respond-between(breakpoint-xl, breakpoint-lg)
+@mixin respond-between($lower, $upper) {
+	@if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+		$lower-breakpoint: map-get($breakpoints, $lower);
+		$upper-breakpoint: map-get($breakpoints, $upper);
+
+		@media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+			@content;
+		}
+	}
+
+	@else {
+		@if (map-has-key($breakpoints, $lower)==false) {
+			@warn 'Your lower breakpoint was invalid: #{$lower}.';
+		}
+
+		@if (map-has-key($breakpoints, $upper)==false) {
+			@warn 'Your upper breakpoint was invalid: #{$upper}.';
+		}
+	}
+}

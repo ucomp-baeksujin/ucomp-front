@@ -1,0 +1,77 @@
+// $color-palettes: (
+// 	'base': (
+// 		'000': #000000,
+// 		'010': #121212,
+// 		'020': #363636,
+// 		'030': #686868,
+// 		'040': #949494,
+// 		'050': #BBBBBB,
+// 		'100': #ffffff,
+// 	),
+// 	'prim': (
+// 		'010': #E50060,
+// 		'011': #FCE5EF,
+// 		'012': #D9005C,
+// 	),
+// 	'seco': (
+// 		'010': #ABCD03,
+// 	),
+// 	'line': (
+// 		'010': #CCCCCC,
+// 		'020': #EAEAEA,
+// 	),
+// 	'bg': (
+// 		'010': #FAFAFA,
+// 		'011': #F4F4F4,
+// 	),
+// 	'system': (
+// 		'010': #F5002F,
+// 		'020': #056fea,
+// 	),
+// );
+
+$color-palettes: (
+	base: (
+		100: #000000,
+		090: #121212,
+		080: #222222,
+		070: #444444,
+		060: #666666,
+		050: #737373,
+		040: #999999,
+		030: #cdcdcd,
+		020: #e3e3e3,
+		010: #f0f0f0,
+		005: #fafafa,
+		000: #ffffff,
+	),
+);
+
+// $colors: (
+// 	base-000: var(--base-000),
+// 	base-010: var(--base-010),
+// 	base-020: var(--base-020),
+// 	base-030: var(--base-030),
+// 	base-040: var(--base-040),
+// 	base-050: var(--base-050),
+// 	base-100: var(--base-100),
+// 	primary-010: var(--prim-010),
+// 	secondary-010: var(--seco-010),
+// 	system-010: var(--system-010),
+// 	system-020: var(--system-020),
+// 	line-010: var(--line-010),
+// 	line-020: var(--line-020),
+// 	bg-010: var(--bg-010),
+// 	bg-011: var(--bg-011),
+// );
+
+$breakpoints: (
+	frame: 1920px,
+	container: 1360px,
+	breakpoint-xl: 2560px, // laptop 4K
+	breakpoint-lg: 1440px, // laptop
+	breakpoint-ml: 1280px, // tablet
+	breakpoint-md: 1024px, // tablet
+	breakpoint-sm: 768px, // mobile
+	breakpoint-xs: 360px, // mobile small
+);

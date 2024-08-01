@@ -1,0 +1,6 @@
+@import 'front.include';
+
+// 모든 요소
+.div {
+	@include hidden();
+}
