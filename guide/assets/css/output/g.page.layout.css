@@ -157,7 +157,10 @@
   margin: 40px 0;
 }
 .g-container .g-content .g-content-body .g-section {
-  margin: 40px 0;
+  margin: 80px 0;
+}
+.g-container .g-content .g-content-body .g-section:first-of-type {
+  margin: 40px 0 80px;
 }
 .g-container .g-content .g-content-body .g-section .g-section-head {
   display: -webkit-box;
@@ -211,7 +214,10 @@
   margin: 24px 0;
 }
 .g-container .g-content .g-content-body .g-section .g-color-palettes {
-  margin: 24px 0;
+  margin: 16px 0 0;
+}
+.g-container .g-content .g-content-body .g-section .g-color-palettes + .g-title-s {
+  margin: 40px 0 0;
 }
 .g-container .g-content .g-content-body .g-section .g-icon-list {
   margin: 10px 0;
@@ -232,6 +238,10 @@
 }
 .g-container .g-content .g-content-body .g-section .g-typo-area .g-heading-s {
   margin: 0 0 20px;
+}
+.g-container .g-content .g-content-body .g-section .g-typo-area .g-heading-s .em {
+  font-size: 16px;
+  font-weight: 400;
   color: #afafaf;
 }
 .g-container .g-content .g-content-body .g-section .g-typo-area .g-typo {
@@ -245,6 +255,8 @@
   gap: 4px;
 }
 .g-container .g-content .g-content-body .g-section .g-typo-area .g-typo .g-typo-title {
-  font-weight: 500;
   color: #c1c1c1;
+}
+.g-container .g-content .g-content-body .g-section .g-icon-area {
+  margin: 40px 0 0;
 }

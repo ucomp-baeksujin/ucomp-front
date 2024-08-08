@@ -177,7 +177,11 @@
 
 
 			.g-section {
-				margin: 40px 0;
+				margin: 80px 0;
+
+				&:first-of-type {
+					margin: 40px 0 80px;
+				}
 				
 				.g-section-head {
 					display: flex;
@@ -249,7 +253,11 @@
 				}
 
 				.g-color-palettes {
-					margin: 24px 0;
+					margin: 16px 0 0;
+
+					+.g-title-s {
+						margin: 40px 0 0;
+					}
 				}
 
 				.g-icon-list {
@@ -268,7 +276,12 @@
 
 					.g-heading-s {
 						margin: 0 0 20px;
-						color: #afafaf
+
+						.em {
+							font-size: 16px;
+							font-weight: 400;
+							color: #afafaf
+						}
 					}
 
 					.g-typo {
@@ -278,11 +291,15 @@
 						gap: 4px;
 
 						.g-typo-title {
-							font-weight: 500;
+							// font-weight: 500;
 							color: #c1c1c1;
 							// text-transform: capitalize;
 						}
 					}
+				}
+
+				.g-icon-area {
+					margin: 40px 0 0;
 				}
 			}
 		}
