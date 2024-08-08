@@ -123,6 +123,9 @@
   color: #afafaf;
   text-transform: capitalize;
 }
+.g-container .g-content .g-content-body .g-heading-m + .g-title-s {
+  margin-top: 20px;
+}
 .g-container .g-content .g-content-body .g-title-s {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -258,5 +261,5 @@
   color: #c1c1c1;
 }
 .g-container .g-content .g-content-body .g-section .g-icon-area {
-  margin: 40px 0 0;
+  margin: 24px 0 0;
 }
