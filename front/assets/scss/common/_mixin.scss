@@ -1,5 +1,5 @@
 // mixin
-// 텍스트 미노출 @include hidden;
+// 텍스트 미노출  ex) @include hidden;
 @mixin hidden($mode: &) {
 	overflow: hidden;
 	position: absolute;
@@ -23,7 +23,7 @@
 	}
 }
 
-// sass 최상단 부모 클래스 선택 @include most-outer-selector(".temp");
+// sass 최상단 부모 클래스 선택 ex) @include most-outer-selector(".temp");
 @mixin most-outer-selector($new-class) {
 	$current-selector: &;
 	$new-selector: (
@@ -43,7 +43,7 @@
 }
 }
 
-// root 클래스 선택 @include root-selector('.laptop');
+// root 클래스 선택 ex) @include root-selector('.laptop');
 @mixin root-selector($new-class) {
 	$root-selector: html;
 	$current-selector: &;
@@ -88,7 +88,7 @@
 	}
 }
 
-// overflow scroll 	@include overflow-scroll(default, dark, large, y);
+// overflow scroll ex) @include overflow-scroll(default, dark, large, y);
 @mixin overflow-scroll($mode: default, $theme: dark, $outline: medium, $scroll: &) {
 	@if $mode ==default {
 
@@ -183,7 +183,7 @@
 	}
 }
 
-// 이하 @include respond-below(breakpoint-xl)
+// 이하 ex) @include respond-below(breakpoint-xl)
 @mixin respond-below($breakpoint) {
 	@if map-has-key($breakpoints, $breakpoint) {
 		$breakpoint-value: map-get($breakpoints, $breakpoint);
@@ -198,7 +198,7 @@
 	}
 }
 
-// 이상 @include respond-above(breakpoint-xl)
+// 이상 ex) @include respond-above(breakpoint-xl)
 @mixin respond-above($breakpoint) {
 	@if map-has-key($breakpoints, $breakpoint) {
 		$breakpoint-value: map-get($breakpoints, $breakpoint);

@@ -13,6 +13,166 @@
  * Reset
 
 ********************************************************************************************************************************/
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-gov-dynamic-subset.min.css");
+body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, span, a, table, thead, tfoot, tbody, th, td, form, legend, label, input, textarea, address, strong, em, pre, q, abbr, acronym, cite, blockquote, object, iframe, figure {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+}
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  line-height: 1;
+  /*letter-spacing: -0.5px;*/
+  -webkit-text-size-adjust: none;
+}
+
+img, fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+ul, ol, li {
+  list-style-type: none;
+  list-style: none;
+}
+
+select, input, textarea {
+  font-family: inherit;
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+legend, caption {
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  visibility: hidden;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+a {
+  font: inherit;
+  color: inherit;
+}
+a:link, a:visited, a:active, a:focus {
+  text-decoration: none;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=tel], input[type=checkbox], input[type=radio], input[type=number] {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+textarea, select {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+textarea:focus, select:focus {
+  outline: none;
+}
+
+button {
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+::-moz-selection {
+  background-color: #121212;
+  color: #fff;
+}
+
+::selection {
+  background-color: #121212;
+  color: #fff;
+}
+
+/********************************************************************************************************************************
+
+ * color
+
+********************************************************************************************************************************/
+:root {
+  --system-000: #000000;
+  --system-010: #d32f2f;
+  --system-020: #f9a825;
+  --system-030: #4caf50;
+  --system-040: #0091ea;
+  --system-100: #ffffff;
+  --base-000: #000000;
+  --base-010: #121212;
+  --base-020: #363636;
+  --base-030: #686868;
+  --base-100: #ffffff;
+  --primary-000: #000000;
+  --primary-005: #536dfe;
+  --primary-010: #3d5afe;
+  --primary-020: #2b46db;
+  --primary-100: #ffffff;
+  --secondary-000: #000000;
+  --secondary-005: #ff9e90;
+  --secondary-010: #ff6e40;
+  --secondary-020: #ff3d00;
+  --secondary-100: #ffffff;
+}
+
+/********************************************************************************************************************************
+
+ * typography
+
+********************************************************************************************************************************/
+/********************************************************************************************************************************
+
+ * Web Font
+
+********************************************************************************************************************************/
+/*
+ * Pretendard 400, 500. 700
+ */
+/********************************************************************************************************************************
+
+ * Reset
+
+********************************************************************************************************************************/
 body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, span, a, table, thead, tfoot, tbody, th, td, form, legend, label, input, textarea, address, strong, em, pre, q, abbr, acronym, cite, blockquote, object, iframe, figure {
   margin: 0;
   padding: 0;
@@ -208,6 +368,36 @@ button {
 
 .body-s {
   font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.g-heading-m {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.g-heading-s {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.g-title-l {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.g-title-s {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.g-body-m {
+  font-size: 16px;
   font-weight: 400;
   line-height: 150%;
 }

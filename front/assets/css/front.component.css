@@ -1,5 +1,5 @@
 @charset "UTF-8";
 
-@import url("output/f.common.css");
-@import url("output/f.component.css");
-@import url("output/f.form.css");
+@import url("output/front.base.css");
+@import url("output/front.component.css");
+@import url("output/front.form.css");

@@ -7,68 +7,108 @@
 	<meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>GUIDE - front</title>
-	<link rel="stylesheet" href="../../front/assets/css/front.common.css">
-	<link rel="stylesheet" href="../../front/assets/css/front.component.css">
+	
+	<link rel="shortcut icon" href="../../guide/assets/images/app/favicon.ico" color="#000000">
+	<link rel="stylesheet" href="../../guide/assets/css/g.page.css">
+	<link rel="stylesheet" href="../../guide/assets/css/g.component.css">
+	
+	<script src="../assets/js/include.js"></script>
 </head>
 <body>
-	<div id="bui-wrap">
+	<div id="g-wrap">
 		<!-- 헤더 영역 -->
-		<header id="bui-header"></header>
+		<header id="g-header"></header>
 		<!-- //헤더 영역 -->
 
 		<!-- 네비 영역 -->
-		<nav id="bui-navi">
-			<div class="bui-navi-logo">
-				<a href="#" class="logo">Ucompanion</a>
-			</div>
-			<ul class="bui-navi-list">
-				<li class="bui-navi-item"><a href="#" class="bui-navi-link">URL</a></li>
-				<li class="bui-navi-item">
-					<button type="button" class="bui-navi-toggle">STYLE</button>
-					<ul class="bui-sub-list">
-						<li class="bui-sub-item"><a href="#" class="bui-sub-link">Layout</a></li>
-						<li class="bui-sub-item"><a href="#" class="bui-sub-link">Color</a></li>
-						<li class="bui-sub-item"><a href="#" class="bui-sub-link">Typography</a></li>
-						<li class="bui-sub-item"><a href="#" class="bui-sub-link">Icon</a></li>
-					</ul>
-				</li>
-				<li class="bui-navi-item">
-					<button type="button" class="bui-navi-toggle">Component</button>
-					<ul class="bui-sub-list">
-						<li class="bui-sub-item"><a href="#" class="bui-sub-link">Structure</a></li>
-						<li class="bui-sub-item"><a href="#" class="bui-sub-link">Button</a></li>
-						<li class="bui-sub-item"><a href="#" class="bui-sub-link">Form</a></li>
-						<li class="bui-sub-item"><a href="#" class="bui-sub-link">Tab</a></li>
-						<li class="bui-sub-item"><a href="#" class="bui-sub-link">Table</a></li>
-						<li class="bui-sub-item"><a href="#" class="bui-sub-link">Pagination</a></li>
-						<li class="bui-sub-item"><a href="#" class="bui-sub-link">Popup</a></li>
-					</ul>
-				</li>
-			</ul>
-		</nav>
+		<nav id="g-navi"></nav>
 		<!-- //네비 영역 -->
 
 		<!-- 컨테이너 영역 -->
-		<div class="bui-container">
-			<div class="bui-content">
-				<div class="bui-content-head">
-					<h2 class="bui-heading-l">
-						<span class="em"></span>
-						<strong class="em">large</strong>
-					</h2>
+		<div class="g-container">
+			<div class="g-content">
+				<div class="g-content-head">
+					<h2 class="g-heading-s"><em>메뉴리스트</em></h2>
 				</div>
-				<div class="bui-content-body">
-					<div class="bui-content-area">
-						<h3 class="bui-heading-m">medium</h3>
+				<div class="g-content-body">
+					<div class="g-menu-area">
+						<h3 class="g-heading-m">화면 <span class="em">&#40;Page&#41;</span></h3>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- //컨테이너 영역 -->
-
-		<!-- 푸터 영역 -->
-		<footer id="bui-footer"></footer>
-		<!-- //푸터 영역 -->
 	</div>
+
+	<script stype="text/javascript">
+		var page = {
+			"layout": [
+				{ "id": "page.default", "status": "미정", "name": "미정" },
+				{ "id": "demo.popup", "status": "진행", "name": "진행" },
+				{ "id": "demo.campaign", "status": "수정", "name": "수정" },
+				{ "id": "demo.campaign", "status": "완료", "name": "완료" },
+			],
+			"main": [
+				{ "id": "HOME_01", "status": "완료", "name": "메인" },
+			],
+		};
+
+		document.addEventListener('DOMContentLoaded', function () {
+			function createElement(tag, className, textContent) {
+				var element = document.createElement(tag);
+				if (className) element.className = className;
+				if (textContent) element.textContent = textContent;
+				return element;
+			}
+
+			function listup(selector) {
+				var directory = './../../front/';
+				var dataContainer = document.querySelector(selector);
+
+				Object.keys(page).forEach(function (dir) {
+					var section = createElement('section', 'g-section');
+					var sectionHead = createElement('div', 'g-section-head');
+					var sectionTitle = createElement('h3', 'g-section-subject', dir);
+					var sectionBody = createElement('div', 'g-section-body');
+					var dataList = createElement('ul', 'g-menu-list');
+
+					section.id = dir;
+					sectionHead.appendChild(sectionTitle);
+
+					page[dir].forEach(function (data) {
+						var dataItem = createElement('li', 'g-menu-item');
+						var dataArea = createElement('a', 'g-menu-wrap');
+						var dataHead = createElement('span', 'g-menu-head', data.name);
+						var dataBody = createElement('span', 'g-menu-body', data.id + '.html');
+
+						dataItem.title = data.status;
+						dataArea.setAttribute('target', '_blank');
+						dataArea.setAttribute('href', directory + section.id + '/' + data.id + '.html');
+
+						dataArea.appendChild(dataHead);
+						dataArea.appendChild(dataBody);
+						dataItem.appendChild(dataArea);
+						dataList.appendChild(dataItem);
+					});
+
+					sectionBody.appendChild(dataList);
+					section.appendChild(sectionHead);
+					section.appendChild(sectionBody);
+					dataContainer.appendChild(section);
+
+					// 페이지 전체 열기 버튼
+					var openPage = createElement('button', null, '모두열기');
+					sectionHead.appendChild(openPage);
+					openPage.addEventListener('click', function () {
+						section.querySelectorAll('a').forEach(function (page) {
+							window.open(page.href, '_blank');
+						});
+					});
+				});
+			}
+
+			listup('.g-menu-area');
+		});
+	</script>
 </body>
 </html>

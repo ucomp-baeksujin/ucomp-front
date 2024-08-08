@@ -1,0 +1,59 @@
+@import '../../../front/assets/scss/common/_base';
+@import '../../../front/assets/scss/front.base';
+
+// 페이지 단위 타이틀
+// .g-heading-l {
+// 	font-size: 48px;
+// 	font-weight: 700;
+// 	line-height: 150%; // 1.5
+// }
+
+.g-heading-m {
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 150%;
+}
+
+.g-heading-s {
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 150%;
+}
+
+// 템플릿, 모듈 단위 텍스트
+.g-title-l {
+	font-size: 28px;
+	font-weight: 500;
+	line-height: 150%;
+}
+
+// .g-title-m {
+// 	font-size: 24px;
+// 	font-weight: 500;
+// 	line-height: 150%;
+// }
+
+.g-title-s {
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 150%;
+}
+
+// body 본문 텍스트
+// .g-body-l {
+// 	font-size: 20px;
+// 	font-weight: 400;
+// 	line-height: 150%;
+// }
+
+.g-body-m {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 150%;
+}
+
+// .g-body-s {
+// 	font-size: 14px;
+// 	font-weight: 400;
+// 	line-height: 150%;
+// }

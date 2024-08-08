@@ -1,51 +1,47 @@
-// $color-palettes: (
-// 	'base': (
-// 		'000': #000000,
-// 		'010': #121212,
-// 		'020': #363636,
-// 		'030': #686868,
-// 		'040': #949494,
-// 		'050': #BBBBBB,
-// 		'100': #ffffff,
-// 	),
-// 	'prim': (
-// 		'010': #E50060,
-// 		'011': #FCE5EF,
-// 		'012': #D9005C,
-// 	),
-// 	'seco': (
-// 		'010': #ABCD03,
-// 	),
-// 	'line': (
-// 		'010': #CCCCCC,
-// 		'020': #EAEAEA,
-// 	),
-// 	'bg': (
-// 		'010': #FAFAFA,
-// 		'011': #F4F4F4,
-// 	),
-// 	'system': (
-// 		'010': #F5002F,
-// 		'020': #056fea,
-// 	),
-// );
-
 $color-palettes: (
-	base: (
-		100: #000000,
-		090: #121212,
-		080: #222222,
-		070: #444444,
-		060: #666666,
-		050: #737373,
-		040: #999999,
-		030: #cdcdcd,
-		020: #e3e3e3,
-		010: #f0f0f0,
-		005: #fafafa,
-		000: #ffffff,
+	system: ('000': #000000,
+		'010': #d32f2f,
+		'020': #f9a825,
+		'030': #4caf50,
+		'040': #0091ea,
+		'100': #ffffff,
+	),
+	base: ('000': #000000,
+		'010': #121212,
+		'020': #363636,
+		'030': #686868,
+		'100': #ffffff,
+	),
+	primary: ('000': #000000,
+		'005': #536dfe,
+		'010': #3d5afe,
+		'020': #2b46db,
+		'100': #ffffff,
+	),
+	secondary: ('000': #000000,
+		'005': #ff9e90,
+		'010': #ff6e40,
+		'020': #ff3d00,
+		'100': #ffffff,
 	),
 );
+
+// Create Color ex) color(base, 010, 0.5), color(base, 010);
+@function color($theme: base, $variant: 000, $opacity: 1) {
+	$variant-str: if(type-of($variant)=='number', str-slice('000' + $variant, -3), $variant);
+	$theme-map: map-get($color-palettes, $theme);
+	$set-color: map-get($theme-map, $variant-str);
+
+	@if $set-color {
+		$create-color: rgba(red($set-color), green($set-color), blue($set-color), $opacity);
+		@return $create-color;
+	}
+
+	@else {
+		@warn "Color variant `#{$variant}` not found in theme `#{$theme}`.";
+		@return null;
+	}
+}
 
 // $colors: (
 // 	base-000: var(--base-000),
@@ -68,10 +64,16 @@ $color-palettes: (
 $breakpoints: (
 	frame: 1920px,
 	container: 1360px,
-	breakpoint-xl: 2560px, // laptop 4K
-	breakpoint-lg: 1440px, // laptop
-	breakpoint-ml: 1280px, // tablet
-	breakpoint-md: 1024px, // tablet
-	breakpoint-sm: 768px, // mobile
-	breakpoint-xs: 360px, // mobile small
+	breakpoint-xl: 2560px,
+	// laptop 4K
+	breakpoint-lg: 1440px,
+	// laptop
+	breakpoint-ml: 1280px,
+	// tablet
+	breakpoint-md: 1024px,
+	// tablet
+	breakpoint-sm: 768px,
+	// mobile
+	breakpoint-xs: 360px,
+	// mobile small
 );
