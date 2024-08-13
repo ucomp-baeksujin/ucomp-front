@@ -2,7 +2,7 @@ window.onload = function () {
 	document.querySelector('#g-navi').insertAdjacentHTML('afterbegin', headerTemplate());
 	// activateGnb();
 	// activelink();
-	activateLinkOnScroll();
+	toggleEvent();
 }
 
 const headerTemplate = function () {
@@ -35,13 +35,13 @@ const headerTemplate = function () {
 			<li class="g-navi-item">
 				<span class="g-navi-subject">Component</span>
 				<ul class="g-sub-list">
-					<li class="g-sub-item"><a href="#" class="g-sub-link">Structure</a></li>
-					<li class="g-sub-item"><a href="#" class="g-sub-link">Button</a></li>
-					<li class="g-sub-item"><a href="#" class="g-sub-link">Form</a></li>
-					<li class="g-sub-item"><a href="#" class="g-sub-link">Tab</a></li>
-					<li class="g-sub-item"><a href="#" class="g-sub-link">Table</a></li>
-					<li class="g-sub-item"><a href="#" class="g-sub-link">Pagination</a></li>
-					<li class="g-sub-item"><a href="#" class="g-sub-link">Popup</a></li>
+					<li class="g-sub-item"><a href="structure.html" class="g-sub-link">Structure</a></li>
+					<li class="g-sub-item"><a href="button.html" class="g-sub-link">Button</a></li>
+					<li class="g-sub-item"><a href="form.html" class="g-sub-link">Form</a></li>
+					<li class="g-sub-item"><a href="tab.html" class="g-sub-link">Tab</a></li>
+					<li class="g-sub-item"><a href="table.html" class="g-sub-link">Table</a></li>
+					<li class="g-sub-item"><a href="pagination.html" class="g-sub-link">Pagination</a></li>
+					<li class="g-sub-item"><a href="popup.html" class="g-sub-link">Popup</a></li>
 				</ul>
 			</li>
 		</ul>`;
@@ -87,12 +87,12 @@ function hashtag (link) {
 		var targetPosition = targetElement.offsetTop;
 		window.scrollTo({ top: targetPosition, behavior: 'smooth' });
 
-		var gnbLinks = document.querySelectorAll('.g-sub-link');
-		gnbLinks.forEach(function (gnbLink) {
-			gnbLink.classList.remove('active');
-		});
+		// var gnbLinks = document.querySelectorAll('.g-sub-link');
+		// gnbLinks.forEach(function (gnbLink) {
+		// 	gnbLink.classList.remove('active');
+		// });
 
-		link.classList.add('active');
+		// link.classList.add('active');
 
 		return false;
 	}
@@ -113,28 +113,44 @@ function hashtag (link) {
 //     });
 // }
 
-function activateLinkOnScroll() {
-	var sections = document.querySelectorAll('.g-section');
-	var gnbLinks = document.querySelectorAll('.g-sub-link');
+// function hashtag(link) {
+// 	var href = link.getAttribute('href');
+// 	var hashIndex = href.indexOf('#');
 
-	window.addEventListener('scroll', function () {
-		var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+// 	// 해시가 없는 경우, 기본 동작을 수행 (return true 를 반환)
+// 	if (hashIndex === -1) {
+// 		return true;
+// 	}
 
-		sections.forEach(function (section) {
-			var sectionTop = section.offsetTop - 50; // 오프셋 조정
-			var sectionBottom = sectionTop + section.offsetHeight;
+// 	var hash = href.substring(hashIndex);
+// 	var targetId = hash.substring(1);
+// 	var targetElement = document.getElementById(targetId);
 
-			if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-				var targetId = section.getAttribute('id');
-				gnbLinks.forEach(function (link) {
-					if (link.getAttribute('href').includes(targetId)) {
-						gnbLinks.forEach(function (gnbLink) {
-							gnbLink.classList.remove('active');
-						});
-						link.classList.add('active');
-					}
-				});
-			}
+// 	if (window.location.pathname === link.pathname && targetElement) {
+// 		var targetPosition = targetElement.offsetTop;
+// 		window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+
+// 		var gnbLinks = document.querySelectorAll('.g-sub-link');
+// 		gnbLinks.forEach(function (gnbLink) {
+// 			gnbLink.classList.remove('active');
+// 		});
+
+// 		link.classList.add('active');
+
+// 		return false;
+// 	}
+
+// 	return true;
+// }
+
+function toggleEvent() {
+	var toggleBtns = document.querySelectorAll('.g-toggle .btn-toggle');
+	
+	toggleBtns.forEach(function (toggleBtn) {
+		toggleBtn.addEventListener('click', function () {
+			var toggleTarget = toggleBtn.closest('.g-toggle');
+			toggleTarget.classList.toggle('active');
 		});
 	});
+    
 }

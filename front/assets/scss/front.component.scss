@@ -1,6 +1,211 @@
 @import 'front.include';
 
-// 모든 요소
-.div {
-	@include hidden();
+// button, tab, table...
+
+
+/********************************************************************************************************************************
+
+ * button
+
+********************************************************************************************************************************/
+
+.btn {
+	&-a {
+	// &[class*="-a"] {
+	// 기본 설정
+		--height: 52px;
+		--padding: 0 26px;
+		--radius: 4px;
+		--fontSize: 16px;
+		--fontWeight: 500;
+		--lineHeight: 24px;
+		--iconBg: #{color(base, 100)};
+
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: auto;
+		height: var(--height);
+		padding: var(--padding);
+		box-sizing: border-box;
+		// box-shadow: inset 0px 0px 0 1px var(--borderColor);
+		border-radius: var(--radius);
+		background-color: var(--bgColor);
+		font-size: var(--fontSize);
+		font-weight: var(--fontWeight);
+		line-height: var(--lineHeight);
+		color: var(--color);
+		text-align: center;
+
+		&:not(.disabled):not(:disabled) {
+			--bgColor: #{color(primary, 50)};
+			--color: #{color(base, 100)};
+		}
+
+		&:hover {
+			box-shadow: 2px 2px 6px 2px rgba($color: #000000, $alpha: 0.5);
+		}
+
+		&[disabled],
+		&.disabled {
+			--bgColor: #{color(base, 80)};
+			--color: var(--base-10);
+			--iconBg: #{color(base, 100)};
+
+			box-shadow: none;
+
+			&:hover {
+				box-shadow: none;
+			}
+		}
+
+		// style
+		&.primary:not(.disabled):not(:disabled) {
+			--bgColor: #{color(primary, 50)};
+			--color: #{color(base, 100)};
+			--iconBg: #{color(base, 100)};
+		
+			&.type-line:not(.disabled):not(:disabled) {
+				--borderColor: #{color(primary, 40)};
+				--color: #{color(primary, 40)};
+			}
+		}
+
+		&.secondary:not(.disabled):not(:disabled) {
+			--bgColor: #{color(secondary, 50)};
+			--color: #{color(base, 100)};
+			--iconBg: #{color(base, 100)};
+		
+			&.type-line:not(.disabled):not(:disabled) {
+				--borderColor: #{color(secondary, 40)};
+				--color: #{color(secondary, 40)};
+			}
+		}
+
+		&.tertiary:not(.disabled):not(:disabled) {
+			--bgColor: #{color(base, 70)};
+			--color: #{color(base, 10)};
+			--iconBg: #{color(base, 100)};
+		
+			&.type-line:not(.disabled):not(:disabled) {
+				--borderColor: #{color(base, 70)};
+				--color: #{color(base, 10)};
+			}
+		}
+
+		&.type-line:not(.disabled):not(:disabled) {
+			--bgColor: #{color(base, 100)};
+		
+			border: 1px solid var(--borderColor);
+		}
+
+		// ico
+		&[class*="ico-"] {
+			gap: 4px;
+
+			&:not([class*=-ltr]) {
+				&::after {
+					content: '';
+					display: block;
+					mask-repeat: no-repeat;
+					mask-position: 50%;
+					mask-size: cover;
+					background-color: var(--iconBg);
+				}
+			}
+			
+
+			&[class*=-ltr] {
+				&::before {
+					content: '';
+					display: block;
+					mask-repeat: no-repeat;
+					mask-position: 50%;
+					mask-size: cover;
+					background-color: var(--iconBg);
+				}
+			}		
+		}
+
+		&[class*=ico-pin] { &::before, &::after { mask-image: icon(g-pin, color(base, 100)); } }
+
+		// size
+		$btn-style-size: (
+			// name size font-size padding
+			'x-small' 32px 14px 18px,
+			'small' 36px 14px 18px,
+			'medium' 52px 16px 26px,
+			'large' 64px 20px 32px,
+			'x-large' 68px 24px 32px,
+		);
+		
+		@each $name, $size, $fontSize, $padding in $btn-style-size {
+			&.#{$name} {
+				// --min-width: #{$outline};
+				--height: #{$size};
+				--lineHeight: #{$size};
+				--fontSize: #{$fontSize};
+				--padding: 0 #{$padding};
+	
+				&[class*="ico-"] {
+					--padding: 0 calc(#{$padding} - 4px) 0 #{$padding};
+
+					&::before,
+					&::after {
+						width: #{$fontSize};
+						height: #{$fontSize};
+					}
+				}
+			}
+		}
+
+		&.btn-text {
+			padding: 0;
+			background-color: inherit;
+			border: 0;
+			color: inherit;
+
+			&.underline {
+				text-decoration: underline;
+			}
+
+			&.link {
+				height: auto;
+				line-height: 1;
+				// text-decoration: underline;
+			}
+
+			&[class*="ico-"] {
+				--iconBg: #{color(base, 0)};
+				// 텍스트 컬러랑 같아야함
+
+				gap: 2px;
+			}
+
+			&:hover {
+				box-shadow: none;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.button-display {
+	display: flex;
+	justify-content: center;
+
+	// &[class*="align-"] {
+	// }
+
+	&.align-a {
+		justify-content: flex-start;
+	}
+
+	&.align-b {
+		justify-content: flex-end;
+	}
+
+	&.align-c {
+		justify-content: center;
+	}
 }

@@ -1,18 +1,225 @@
-.div {
-  overflow: hidden;
-  position: absolute;
-  top: -9999em;
-  left: -9999em;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  line-height: 1px;
-  font-size: 1px;
-  border: 0;
-  clip: rect(0 0 0 0);
-  clip: rect(0, 0, 0, 0);
-  pointer-events: none;
+/********************************************************************************************************************************
+
+ * button
+
+********************************************************************************************************************************/
+.btn-a {
+  --height: 52px;
+  --padding: 0 26px;
+  --radius: 4px;
+  --fontSize: 16px;
+  --fontWeight: 500;
+  --lineHeight: 24px;
+  --iconBg: rgb(255, 255, 255);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: auto;
+  height: var(--height);
+  padding: var(--padding);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: var(--radius);
+  background-color: var(--bgColor);
+  font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  line-height: var(--lineHeight);
+  color: var(--color);
+  text-align: center;
+}
+.btn-a:not(.disabled):not(:disabled) {
+  --bgColor: rgb(1, 132, 208);
+  --color: rgb(255, 255, 255);
+}
+.btn-a:hover {
+  -webkit-box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.5);
+}
+.btn-a[disabled], .btn-a.disabled {
+  --bgColor: rgb(217, 217, 217);
+  --color: var(--base-10);
+  --iconBg: rgb(255, 255, 255);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.btn-a[disabled]:hover, .btn-a.disabled:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.btn-a.primary:not(.disabled):not(:disabled) {
+  --bgColor: rgb(1, 132, 208);
+  --color: rgb(255, 255, 255);
+  --iconBg: rgb(255, 255, 255);
+}
+.btn-a.primary:not(.disabled):not(:disabled).type-line:not(.disabled):not(:disabled) {
+  --borderColor: rgb(1, 106, 166);
+  --color: rgb(1, 106, 166);
+}
+.btn-a.secondary:not(.disabled):not(:disabled) {
+  --bgColor: rgb(255, 89, 38);
+  --color: rgb(255, 255, 255);
+  --iconBg: rgb(255, 255, 255);
+}
+.btn-a.secondary:not(.disabled):not(:disabled).type-line:not(.disabled):not(:disabled) {
+  --borderColor: rgb(255, 60, 0);
+  --color: rgb(255, 60, 0);
+}
+.btn-a.tertiary:not(.disabled):not(:disabled) {
+  --bgColor: rgb(193, 193, 193);
+  --color: rgb(24, 24, 24);
+  --iconBg: rgb(255, 255, 255);
+}
+.btn-a.tertiary:not(.disabled):not(:disabled).type-line:not(.disabled):not(:disabled) {
+  --borderColor: rgb(193, 193, 193);
+  --color: rgb(24, 24, 24);
+}
+.btn-a.type-line:not(.disabled):not(:disabled) {
+  --bgColor: rgb(255, 255, 255);
+  border: 1px solid var(--borderColor);
+}
+.btn-a[class*=ico-] {
+  gap: 4px;
+}
+.btn-a[class*=ico-]:not([class*=-ltr])::after {
+  content: "";
   display: block;
-  position: absolute;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: 50%;
+          mask-position: 50%;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  background-color: var(--iconBg);
+}
+.btn-a[class*=ico-][class*=-ltr]::before {
+  content: "";
+  display: block;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: 50%;
+          mask-position: 50%;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  background-color: var(--iconBg);
+}
+.btn-a[class*=ico-pin]::before, .btn-a[class*=ico-pin]::after {
+  -webkit-mask-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E %3Cpath fill='rgba(0,0,0,1)' fill-rule='evenodd' d='M11.4946 4.68227L9.24456 8.57939C8.36139 10.1091 6.50593 10.7197 4.91412 10.0799L4.39648 10.9765L9.37613 13.8515L5.9816 19.731L6.25616 20.7555L7.28064 20.481L10.6752 14.6015L15.6548 17.4765L16.1725 16.5799C14.8225 15.5212 14.4236 13.6091 15.3067 12.0794L17.5567 8.18227L18.8558 8.93227C19.0929 9.0692 19.4019 8.98643 19.5388 8.74926C19.6757 8.51209 19.5929 8.20318 19.3558 8.06625L10.6955 3.06625C10.4584 2.92932 10.1494 3.01209 10.0125 3.24926C9.87558 3.48643 9.95835 3.79534 10.1955 3.93227L11.4946 4.68227Z' clip-rule='evenodd'/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E %3Cpath fill='rgba(0,0,0,1)' fill-rule='evenodd' d='M11.4946 4.68227L9.24456 8.57939C8.36139 10.1091 6.50593 10.7197 4.91412 10.0799L4.39648 10.9765L9.37613 13.8515L5.9816 19.731L6.25616 20.7555L7.28064 20.481L10.6752 14.6015L15.6548 17.4765L16.1725 16.5799C14.8225 15.5212 14.4236 13.6091 15.3067 12.0794L17.5567 8.18227L18.8558 8.93227C19.0929 9.0692 19.4019 8.98643 19.5388 8.74926C19.6757 8.51209 19.5929 8.20318 19.3558 8.06625L10.6955 3.06625C10.4584 2.92932 10.1494 3.01209 10.0125 3.24926C9.87558 3.48643 9.95835 3.79534 10.1955 3.93227L11.4946 4.68227Z' clip-rule='evenodd'/%3E%3C/svg%3E");
+}
+.btn-a.x-small {
+  --height: 32px;
+  --lineHeight: 32px;
+  --fontSize: 14px;
+  --padding: 0 18px;
+}
+.btn-a.x-small[class*=ico-] {
+  --padding: 0 calc(18px - 4px) 0 18px;
+}
+.btn-a.x-small[class*=ico-]::before, .btn-a.x-small[class*=ico-]::after {
+  width: 14px;
+  height: 14px;
+}
+.btn-a.small {
+  --height: 36px;
+  --lineHeight: 36px;
+  --fontSize: 14px;
+  --padding: 0 18px;
+}
+.btn-a.small[class*=ico-] {
+  --padding: 0 calc(18px - 4px) 0 18px;
+}
+.btn-a.small[class*=ico-]::before, .btn-a.small[class*=ico-]::after {
+  width: 14px;
+  height: 14px;
+}
+.btn-a.medium {
+  --height: 52px;
+  --lineHeight: 52px;
+  --fontSize: 16px;
+  --padding: 0 26px;
+}
+.btn-a.medium[class*=ico-] {
+  --padding: 0 calc(26px - 4px) 0 26px;
+}
+.btn-a.medium[class*=ico-]::before, .btn-a.medium[class*=ico-]::after {
+  width: 16px;
+  height: 16px;
+}
+.btn-a.large {
+  --height: 64px;
+  --lineHeight: 64px;
+  --fontSize: 20px;
+  --padding: 0 32px;
+}
+.btn-a.large[class*=ico-] {
+  --padding: 0 calc(32px - 4px) 0 32px;
+}
+.btn-a.large[class*=ico-]::before, .btn-a.large[class*=ico-]::after {
+  width: 20px;
+  height: 20px;
+}
+.btn-a.x-large {
+  --height: 68px;
+  --lineHeight: 68px;
+  --fontSize: 24px;
+  --padding: 0 32px;
+}
+.btn-a.x-large[class*=ico-] {
+  --padding: 0 calc(32px - 4px) 0 32px;
+}
+.btn-a.x-large[class*=ico-]::before, .btn-a.x-large[class*=ico-]::after {
+  width: 24px;
+  height: 24px;
+}
+.btn-a.btn-text {
+  padding: 0;
+  background-color: inherit;
+  border: 0;
+  color: inherit;
+}
+.btn-a.btn-text.underline {
+  text-decoration: underline;
+}
+.btn-a.btn-text.link {
+  height: auto;
+  line-height: 1;
+}
+.btn-a.btn-text[class*=ico-] {
+  --iconBg: rgb(0, 0, 0);
+  gap: 2px;
+}
+.btn-a.btn-text:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  text-decoration: underline;
+}
+
+.button-display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.button-display.align-a {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.button-display.align-b {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.button-display.align-c {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }

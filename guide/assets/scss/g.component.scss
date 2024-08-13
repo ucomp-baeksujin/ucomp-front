@@ -11,6 +11,7 @@
 				padding: 16px;
 				border-bottom: 1px solid #dfdfdf;
 				background-color: #f7f7f7;
+				font-size: 14px;
 			}
 		}
 
@@ -36,16 +37,17 @@
 .g-color-palettes {
 	.data-list {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 4px;
 
 		.data-item {
-			flex: 1;
+			flex: 1 0 1;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			row-gap: 4px;
-			max-width: 130px;
+			gap: 4px;
+			width: 130px;
 			height: 130px;
 			padding: 20px 10px;
 			box-sizing: border-box;
@@ -103,6 +105,8 @@
 				gap: 12px;
 				padding: 20px 0;
 				font-size: 14px;
+				text-align: center;
+				word-break: break-all;
 
 				&::before {
 					content: '';
@@ -134,5 +138,115 @@
 				}
 			}
 		}
+	}
+}
+
+.g-folder-tree {
+	display: flex;
+	gap: 80px;
+
+	// .g-tree-area {}
+
+	p {
+		font-size: 18px;
+		font-weight: 700;
+	}
+
+	.tree-list {
+		padding-left: 10px;
+
+		li {
+			position: relative;
+			line-height: 1.7;
+			padding: 0 0 0 44px;
+
+			&::before {
+				content: '└ ';
+				position: absolute;
+				top: 2px;
+				left: 0;
+				display: block;
+			}
+
+			&::after {
+				content: '🗂️ ';
+				position: absolute;
+				top: 1px;
+				left: 20px;
+				display: block;
+			}
+		}
+
+		.tree-depth {
+			padding: 0 0 0 0;
+
+			&:last-child {
+				li {
+					margin-left: -20px;
+				}
+			}
+		}
+	}
+}
+
+.highlight-js {
+	margin: 0;
+	padding: 0;
+
+	.hljs {
+		padding: 16px;
+	}
+}
+
+.g-component {
+	border: 1px solid #efefef;
+
+	.g-component-area {
+		padding: 20px;
+
+		.g-button-area {
+			display: flex;
+			gap: 12px;
+			align-items: center;
+		}
+	}
+}
+
+.g-toggle {
+	&:not(.active) {
+		.toggle-body {
+            display: none;
+        }
+	}
+
+	.toggle-wrap {
+		.toggle-head {
+			.btn-toggle {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				position: relative;
+				width: 100%;
+				padding: 12px;
+				background-color: #f7f7f7;
+				font-size: 16px;
+				font-weight: 500;
+				text-align: left;
+
+				&::after {
+					content: '';
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+                    background-color: #000;
+                    border-radius: 50%;
+					mask: icon(g-chevron-down);
+				}
+			}
+		}
+
+		// .toggle-body {
+		// 	// border-top: 1px solid #efefef;
+		// }
 	}
 }

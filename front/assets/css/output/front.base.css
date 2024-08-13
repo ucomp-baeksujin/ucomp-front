@@ -130,26 +130,47 @@ button {
 
 ********************************************************************************************************************************/
 :root {
-  --system-000: #000000;
-  --system-010: #d32f2f;
-  --system-020: #f9a825;
-  --system-030: #4caf50;
-  --system-040: #0091ea;
+  --system-0: #000000;
+  --system-10: #d32f2f;
+  --system-20: #f9a825;
+  --system-30: #4caf50;
+  --system-40: #0091ea;
   --system-100: #ffffff;
-  --base-000: #000000;
-  --base-010: #121212;
-  --base-020: #363636;
-  --base-030: #686868;
+  --base-0: #000000;
+  --base-10: #181818;
+  --base-20: #303030;
+  --base-30: #606060;
+  --base-40: #767676;
+  --base-50: #919191;
+  --base-60: #a9a9a9;
+  --base-70: #c1c1c1;
+  --base-80: #d9d9d9;
+  --base-90: #f2f2f2;
+  --base-95: #fbfbfb;
   --base-100: #ffffff;
-  --primary-000: #000000;
-  --primary-005: #536dfe;
-  --primary-010: #3d5afe;
-  --primary-020: #2b46db;
+  --primary-0: #000000;
+  --primary-10: #052538;
+  --primary-20: #003553;
+  --primary-30: #014F7D;
+  --primary-40: #016AA6;
+  --primary-50: #0184D0;
+  --primary-60: #41A3DC;
+  --primary-70: #73BCE5;
+  --primary-80: #A6D4EF;
+  --primary-90: #D9EDF8;
+  --primary-95: #F2F9FC;
   --primary-100: #ffffff;
-  --secondary-000: #000000;
-  --secondary-005: #ff9e90;
-  --secondary-010: #ff6e40;
-  --secondary-020: #ff3d00;
+  --secondary-0: #000000;
+  --secondary-10: #4D1200;
+  --secondary-20: #801E00;
+  --secondary-30: #B22A00;
+  --secondary-40: #FF3C00;
+  --secondary-50: #FF5926;
+  --secondary-60: #FF764D;
+  --secondary-70: #FFA78C;
+  --secondary-80: #FFCEBF;
+  --secondary-90: #FFE6DE;
+  --secondary-95: #FFF3F0;
   --secondary-100: #ffffff;
 }
 

@@ -1,46 +1,61 @@
 $color-palettes: (
-	system: ('000': #000000,
-		'010': #d32f2f,
-		'020': #f9a825,
-		'030': #4caf50,
-		'040': #0091ea,
-		'100': #ffffff,
+	system: (
+		000: #000000,
+		010: #d32f2f,
+		020: #f9a825,
+		030: #4caf50,
+		040: #0091ea,
+		100: #ffffff
 	),
-	base: ('000': #000000,
-		'010': #121212,
-		'020': #363636,
-		'030': #686868,
-		'100': #ffffff,
+	base: (
+		000: #000000,
+		010: #181818,
+		020: #303030,
+		030: #606060,
+		040: #767676,
+		050: #919191,
+		060: #a9a9a9,
+		070: #c1c1c1,
+		080: #d9d9d9,
+		090: #f2f2f2,
+		095: #fbfbfb,
+		100: #ffffff
 	),
-	primary: ('000': #000000,
-		'005': #536dfe,
-		'010': #3d5afe,
-		'020': #2b46db,
-		'100': #ffffff,
+	primary: (
+		000: #000000,
+		010: #052538,
+		020: #003553,
+		030: #014F7D,
+		040: #016AA6,
+		050: #0184D0,
+		060: #41A3DC,
+		070: #73BCE5,
+		080: #A6D4EF,
+		090: #D9EDF8,
+		095: #F2F9FC,
+		100: #ffffff
 	),
-	secondary: ('000': #000000,
-		'005': #ff9e90,
-		'010': #ff6e40,
-		'020': #ff3d00,
-		'100': #ffffff,
+	secondary: (
+		000: #000000,
+		010: #4D1200,
+		020: #801E00,
+		030: #B22A00,
+		040: #FF3C00,
+		050: #FF5926,
+		060: #FF764D,
+		070: #FFA78C,
+		080: #FFCEBF,
+		090: #FFE6DE,
+		095: #FFF3F0,
+		100: #ffffff
 	),
 );
 
 // Create Color ex) color(base, 010, 0.5), color(base, 010);
-@function color($theme: base, $variant: 000, $opacity: 1) {
-	$variant-str: if(type-of($variant)=='number', str-slice('000' + $variant, -3), $variant);
-	$theme-map: map-get($color-palettes, $theme);
-	$set-color: map-get($theme-map, $variant-str);
-
-	@if $set-color {
-		$create-color: rgba(red($set-color), green($set-color), blue($set-color), $opacity);
-		@return $create-color;
-	}
-
-	@else {
-		@warn "Color variant `#{$variant}` not found in theme `#{$theme}`.";
-		@return null;
-	}
+@function color($theme: normal, $variant: 00, $opacity: 1) {
+	$set-color: map-get($color-palettes, $theme, $variant);
+	$create-color: rgba(red($set-color), green($set-color), blue($set-color), $opacity);
+	@return $create-color;
 }
 
 // $colors: (
