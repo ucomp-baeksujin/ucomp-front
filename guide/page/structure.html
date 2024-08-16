@@ -10,8 +10,8 @@
 	
 	<link rel="shortcut icon" href="../../guide/assets/images/app/favicon.ico">
 	
-	<link rel="stylesheet" href="../../guide/assets/css/g.page.css">
 	<link rel="stylesheet" href="../../guide/assets/css/g.component.css">
+	<link rel="stylesheet" href="../../guide/assets/css/g.page.css">
 	<link rel="stylesheet" href="../../front/assets/css/front.component.css">
 	
 	<script src="../assets/js/include.js"></script>
@@ -22,6 +22,10 @@
 </head>
 <body>
 	<div id="g-wrap">
+		<!-- 스킵 영역 -->
+		<div id="skip" class="skip"></div>
+		<!-- //스킵 영역 -->
+
 		<!-- 헤더 영역 -->
 		<!-- <header id="g-header"></header> -->
 		<!-- //헤더 영역 -->
@@ -32,7 +36,7 @@
 		<!-- //네비 영역 -->
 
 		<!-- 컨테이너 영역 -->
-		<div class="g-container" id="container">
+		<div class="g-container" id="g-container">
 			<div class="g-content">
 				<div class="g-content-head">
 					<h2 class="g-heading-s"><em>컴포넌트 가이드</em></h2>
@@ -41,6 +45,8 @@
 					<!-- layout -->
 					<section class="g-section" id="structure">
 						<h3 class="g-heading-m">구조 <span class="em">&#40;Structure&#41;</span></h3>
+
+						<!-- g-folder -->
 						<h4 class="g-heading-s">폴더</h4>
 						<div class="g-folder-tree">
 							<div class="g-tree-area">
@@ -86,15 +92,115 @@
 								</ul>
 							</div>
 						</div>
-						<h4 class="g-heading-s">코드</h4>
-						<div class="g-code-box"7 >
-							<pre class="highlight-js">
-<code class="html">&lt;a href="#" class="btn"&gt;&lt;span class="btn-text"&gt;name&lt;/span&gt;&lt;/a&gt;
-&lt;button type="button" class="btn"&gt;&lt;span class="btn-text"&gt;name&lt;/span&gt;&lt;/button&gt;
-&lt;button type="submit" class="btn"&gt;&lt;span class="btn-text"&gt;name&lt;/span&gt;&lt;/button&gt;</code></pre>
+						<!-- //g-folder -->
+
+						<!-- g-head -->
+						<h4 class="g-heading-s">헤드</h4>
+						<div class="g-code-area g-toggle">
+							<div class="toggle-wrap">
+								<div class="toggle-head">
+									<button class="btn-toggle" type="button">코드 보기</button>
+								</div>
+								<div class="toggle-body">
+									<div class="g-code-box">
+										<pre class="highlight-js">
+<code class="html">&lt;meta charset="UTF-8" /&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" /&gt;
+&lt;title&gt;GUIDE - Ucomp&lt;/title&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="ie=edge" /&gt;
+
+&lt;meta name="keyword" content="GUIDE - Ucomp"&gt;
+&lt;meta name="description" content="GUIDE - Ucomp"&gt;
+&lt;meta name="author" content="U:"&gt;
+&lt;meta http-equiv="Subject" content="GUIDE - Ucomp"&gt;
+&lt;meta http-equiv="Title" content="GUIDE - Ucomp"&gt;
+&lt;meta http-equiv="publisher" content="U:" /&gt;
+&lt;meta http-equiv="Generator" content="Visual Studio Code" /&gt;
+
+&lt;link rel="shortcut icon" href="/images/app/favicon.ico" /&gt;
+
+&lt;meta property="og:type" content="website"&gt;
+&lt;meta property="og:url" content=""&gt;
+&lt;meta property="og:title" content="GUIDE - Ucomp"&gt;
+&lt;meta property="og:image" content=""&gt;
+&lt;meta property="og:description" content="GUIDE - Ucomp"&gt;
+&lt;meta property="og:site_name" content="GUIDE - Ucomp"&gt;
+&lt;meta property="og:locale" content="ko_KR"&gt;</code></pre>
+									</div>
+								</div>
+							</div>
 						</div>
+						<!-- //g-head -->
+
+						<!-- g-include -->
+						
+						<!-- //g-include -->
 					</section>
 					<!-- //layout -->
+
+					<!-- include -->
+					<section class="g-section" id="include">
+						<h3 class="g-heading-m">포함 <span class="em">&#40;Include&#41;</span></h3>
+						<p class="g-title-s">CORS <span class="em">웹 브라우저는 보안을 위해 동일 출처 정책(Same-Origin Policy)을 따릅니다. 이로 인해 모든 페이지에 공통으로 사용되는 부분은 include.js 스크립트를 사용하여 삽입할 수 있습니다.</span></h>
+						<!-- header -->
+						<h4 class="g-heading-s">헤더</h4>
+						<div class="g-code-area g-toggle">
+							<div class="toggle-wrap">
+								<div class="toggle-head">
+									<button class="btn-toggle" type="button">코드 보기</button>
+								</div>
+								<div class="toggle-body">
+									<div class="g-code-box">
+										<pre class="highlight-js">
+<code class="html">&lt;button class="btn-a x-small"&gt;x-small&lt;/button&gt;</code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //header -->
+
+						<!-- footer -->
+						<h4 class="g-heading-s">푸터</h4>
+						<div class="g-code-area g-toggle">
+							<div class="toggle-wrap">
+								<div class="toggle-head">
+									<button class="btn-toggle" type="button">코드 보기</button>
+								</div>
+								<div class="toggle-body">
+									<div class="g-code-box">
+										<pre class="highlight-js">
+<code class="html">&lt;button class="btn-a x-small"&gt;x-small&lt;/button&gt;</code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- // footer -->
+
+						<!-- skip -->
+						<h4 class="g-heading-s">스킵</h4>
+						<div class="g-code-area g-toggle">
+							<div class="toggle-wrap">
+								<div class="toggle-head">
+									<button class="btn-toggle" type="button">코드 보기</button>
+								</div>
+								<div class="toggle-body">
+									<div class="g-code-box">
+										<pre class="highlight-js">
+<code class="html">&lt;div id="skip" class="skip"&gt;
+	&lt;div class="skip-wrap"&gt;
+		&lt;a href="#nav"&lt;메뉴 바로가기&lt;/a&gt;
+		&lt;a href="#container"&gt;본문 바로가기&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //skip -->
+					</section>
+					<!-- //include -->
+
 				</div>
 			</div>
 		</div>

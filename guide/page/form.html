@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>GUIDE - front</title>
+	
+	<link rel="shortcut icon" href="../../guide/assets/images/app/favicon.ico">
+	
+	<link rel="stylesheet" href="../../guide/assets/css/g.component.css">
+	<link rel="stylesheet" href="../../guide/assets/css/g.page.css">
+	<link rel="stylesheet" href="../../front/assets/css/front.component.css">
+	
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="../assets/js/include.js"></script>
+	<script src="../../front/assets/js/ui.common.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div id="g-wrap">
+		<!-- 헤더 영역 -->
+		<!-- <header id="g-header"></header> -->
+		<!-- //헤더 영역 -->
+
+		<!-- 네비 영역 -->
+		<nav id="g-navi">
+		</nav>
+		<!-- //네비 영역 -->
+
+		<!-- 컨테이너 영역 -->
+		<div class="g-container" id="container">
+			<div class="g-content">
+				<div class="g-content-head">
+					<h2 class="g-heading-s"><em>컴포넌트 가이드</em></h2>
+				</div>
+				<div class="g-content-body">
+					<!-- element -->
+					<section class="g-section">
+						<h3 class="g-heading-m">폼 <span class="em">&#40;Form&#41;</span></h3>
+						<h4 class="g-heading-s">요소</h4>
+						<div class="g-component">
+							<div class="g-component-area">
+								<div class="g-component-wrap">
+									<!-- <div class="form-group">
+										<span class="form-tit">타이틀</span>
+										<span class="form input">
+											<input class="form-elem" type="text" placeholder="style-a">
+										</span>
+									</div> -->
+									<h5 class="g-title-s">input</h5>
+									<div class="g-form-area">
+										<span class="form input"><input class="form-elem" type="text" placeholder="default" value="default" /></span>
+										<span class="form input readonly"><input class="form-elem" type="text" placeholder="readonly" value="readonly" readonly /></span>
+										<span class="form input disabled"><input class="form-elem" type="text" placeholder="Default" value="disabled" disabled /></span>
+									</div>
+									<h5 class="g-title-s">select</h5>
+									<div class="g-form-area">
+										<span class="form select">
+											<select name="select" id="select" class="form-elem">
+												<option value="#">default</option>
+											</select>
+										</span>
+										<span class="form select">
+											<select name="select" id="select" class="form-elem" readonly>
+												<option value="#">readonly</option>
+											</select>
+										</span>
+										<span class="form select">
+											<select name="select" id="select" class="form-elem" disabled>
+												<option value="#">disabled</option>
+											</select>
+										</span>
+									</div>
+									<h5 class="g-title-s">textarea</h5>
+									<div class="g-form-area">
+										<span class="form textarea">
+											<textarea name="textarea" id="textarea" class="form-elem" placeholder="default"></textarea>
+											<p class="form-counter">
+												<span class="text-primary">0</span><span class="text-num">/100</span>
+											</p>
+										</span>
+										<span class="form textarea">
+											<textarea name="textarea" id="textarea" class="form-elem" placeholder="readonly" readonly></textarea>
+											<p class="form-counter">
+												<span class="text-primary">0</span><span class="text-num">/100</span>
+											</p>
+										</span>
+										<span class="form textarea">
+											<textarea name="textarea" id="textarea" class="form-elem" placeholder="disabled" disabled></textarea>
+											<p class="form-counter">
+												<span class="text-primary">0</span><span class="text-num">/100</span>
+											</p>
+										</span>
+									</div>
+									<h5 class="g-title-s">radio</h5>
+									<div class="g-form-area">
+										<label class="form radio">
+											<input type="radio" name="radio" id="radio1" class="form-elem" />
+											<span class="form-text">radio-a</span>
+										</label>
+										<label class="form radio">
+											<input type="radio" name="radio" id="radio2" class="form-elem" checked />
+											<span class="form-text">radio-b</span>
+										</label>
+										<label class="form radio disabled">
+											<input type="radio" name="radio" id="radio3" class="form-elem" disabled />
+											<span class="form-text">radio-c</span>
+										</label>
+									</div>
+									<h5 class="g-title-s">checkbox</h5>
+									<div class="g-form-area">
+										<label class="form checkbox">
+											<input type="checkbox" name="checkbox" id="checkbox" class="form-elem" />
+											<span class="form-text">checkbox-a</span>
+										</label>
+										<label class="form checkbox">
+											<input type="checkbox" name="checkbox" id="checkbox" class="form-elem" checked />
+											<span class="form-text">checkbox-b</span>
+										</label>
+										<label class="form checkbox disabled">
+											<input type="checkbox" name="checkbox" id="checkbox" class="form-elem" disabled />
+											<span class="form-text">checkbox-c</span>
+										</label>
+									</div>
+									<h5 class="g-title-s">switch</h5>
+									<div class="g-form-area">
+										<label class="form switch">
+											<input class="form-elem" type="checkbox" checked="checked" />
+											<span class="form-text">switch-a</span>
+										</label>
+										<label class="form switch">
+											<input class="form-elem" type="checkbox" />
+											<span class="form-text">switch-b</span>
+										</label>
+										<label class="form switch">
+											<input class="form-elem" type="checkbox" disabled />
+											<span class="form-text">switch-c</span>
+										</label>
+									</div>
+									<h5 class="g-title-s">file</h5>
+									<div class="g-form-area">
+										<div class="file-upload">
+											<!-- 파일 첨부 전 -->
+											<label class="file-upload-btn" for="fileInput01">
+												<span class="form-text">첨부파일을 업로드해 주세요</span>
+												<!-- <a href="#" class="file-text"><span class="file-name">업로드_후_파일명_노출</span><span class="extension">.pdf</span></a>
+												<button class="btn-delete" type="button" title="닫기"></button> -->
+												<input type="file" class="form-elem" id="fileInput01">
+											</label>
+											<!-- //파일 첨부 전 -->
+											
+											<!-- 파일 첨부 후 -->
+											<label class="file-upload-btn" for="fileInput02">
+												<!-- <span class="form-text">첨부파일을 업로드해 주세요</span> -->
+												<a href="#" class="file-text"><span class="file-name">업로드_후_파일명_노출</span><span class="extension">.pdf</span></a>
+												<button class="btn-delete" type="button" title="닫기"></button>
+												<input type="file" class="form-elem" id="fileInput02">
+											</label>
+											<!-- //파일 첨부 후 -->
+											<p class="form-noti">10MB 이하로 등록 가능합니다.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="g-code-area g-toggle">
+								<div class="toggle-wrap">
+									<div class="toggle-head">
+										<button class="btn-toggle" type="button">코드 보기</button>
+									</div>
+									<div class="toggle-body">
+										<div class="g-code-box">
+<pre class="highlight-js">
+<code class="html">&lt;span class="form input"&gt;
+	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+&lt;/span&gt;</code></pre>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- //element -->
+
+					<!-- style -->
+					<section class="g-section">
+						<h4 class="g-heading-s">스타일</h4>
+						<div class="g-component">
+							<div class="g-component-area">
+								<div class="g-component-wrap">
+									<div class="form-group">
+										<span class="form-tit">타이틀</span>
+										<span class="form input">
+											<input class="form-elem" type="text" placeholder="style-a">
+										</span>
+										<p class="form-noti">도움말</p>
+									</div>
+								</div>
+							</div>
+							<div class="g-code-area g-toggle">
+								<div class="toggle-wrap">
+									<div class="toggle-head">
+										<button class="btn-toggle" type="button">코드 보기</button>
+									</div>
+									<div class="toggle-body">
+										<div class="g-code-box">
+<pre class="highlight-js">
+<code class="html">&lt;span class="form input"&gt;
+	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+&lt;/span&gt;</code></pre>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- //style -->
+
+					<!-- size -->
+					<section class="g-section">
+						<h4 class="g-heading-s">사이즈</h4>
+						<div class="g-component">
+							<div class="g-component-area">
+								<div class="g-component-wrap">
+									<div class="form-area">
+										<span class="form input small">
+											<input class="form-elem" type="text" placeholder="small">
+										</span>
+										<span class="form input medium">
+											<input class="form-elem" type="text" placeholder="medium">
+										</span>
+										<span class="form input large">
+											<input class="form-elem" type="text" placeholder="large">
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="g-code-area g-toggle">
+								<div class="toggle-wrap">
+									<div class="toggle-head">
+										<button class="btn-toggle" type="button">코드 보기</button>
+									</div>
+									<div class="toggle-body">
+										<div class="g-code-box">
+<pre class="highlight-js">
+<code class="html">&lt;span class="form input small"&gt;
+	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+&lt;/span&gt;
+&lt;span class="form input medium"&gt;
+	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+&lt;/span&gt;
+&lt;span class="form input large"&gt;
+	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+&lt;/span&gt;</code></pre>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- //size -->
+
+					<!-- attributes -->
+					<section class="g-section">
+						<h4 class="g-heading-s">속성</h4>
+						<div class="g-component">
+							<div class="g-component-area">
+								<div class="g-component-wrap">
+									<div class="form-area">
+										<span class="form input"><input class="form-elem" type="text" placeholder="default" value="default" /></span>
+										<span class="form input readonly"><input class="form-elem" type="text" placeholder="readonly" value="readonly" readonly /></span>
+										<span class="form input disabled"><input class="form-elem" type="text" placeholder="Default" value="disabled" disabled /></span>
+									</div>
+								</div>
+							</div>
+							<div class="g-code-area g-toggle">
+								<div class="toggle-wrap">
+									<div class="toggle-head">
+										<button class="btn-toggle" type="button">코드 보기</button>
+									</div>
+									<div class="toggle-body">
+										<div class="g-code-box">
+<pre class="highlight-js">
+<code class="html">&lt;span class="form input small"&gt;
+	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+&lt;/span&gt;
+&lt;span class="form input medium"&gt;
+	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+&lt;/span&gt;
+&lt;span class="form input large"&gt;
+	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+&lt;/span&gt;</code></pre>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- //attributes -->
+
+					<!-- vaild -->
+					<section class="g-section">
+						<h4 class="g-heading-s">유효성</h4>
+						<div class="g-component">
+							<div class="g-component-area">
+								<div class="g-component-wrap">
+									<span class="form input valid"><input class="form-elem" type="text" placeholder="valid" /></span>
+									<div class="form-noti">성공 문구가 노출됩니다.</div>
+									<span class="form input invalid"><input class="form-elem" type="text" placeholder="invalid" /></span>
+									<div class="form-noti">입력 형식이 올바르지 않습니다.</div>
+									<span class="form input invalid"><input class="form-elem" type="text" placeholder="invalid" /></span>
+									<div class="form-validator">
+										<span class="eng valid">영문</span><span class="num invalid">숫자</span><span class="characters">특수문자</span><span class="length">10자 이상 15자 이하</span>
+									</div>
+								</div>
+							</div>
+							<div class="g-code-area g-toggle">
+								<div class="toggle-wrap">
+									<div class="toggle-head">
+										<button class="btn-toggle" type="button">코드 보기</button>
+									</div>
+									<div class="toggle-body">
+										<div class="g-code-box">
+<pre class="highlight-js">
+<code class="html">&lt;span class="form input small"&gt;
+	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+&lt;/span&gt;
+&lt;span class="form input medium"&gt;
+	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+&lt;/span&gt;
+&lt;span class="form input large"&gt;
+	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+&lt;/span&gt;</code></pre>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- //vaild -->
+				</div>
+			</div>
+		</div>
+		<!-- //컨테이너 영역 -->
+	</div>
+</body>
+</html>

@@ -1,7 +1,19 @@
 window.onload = function () {
-	document.querySelector('#g-navi').insertAdjacentHTML('afterbegin', headerTemplate());
-	// activateGnb();
-	// activelink();
+	const naviElement = document.querySelector('#g-navi');
+	if (naviElement) {
+		naviElement.insertAdjacentHTML('afterbegin', headerTemplate());
+	}
+
+	const skipElement = document.querySelector('#skip');
+	if (skipElement) {
+		skipElement.insertAdjacentHTML('afterbegin', skipTemplate());
+	}
+
+	// const footerElement = document.querySelector('#g-footer');
+	// if (footerElement) {
+	// 	footerElement.insertAdjacentHTML('afterbegin', headerTemplate());
+	// }
+
 	toggleEvent();
 }
 
@@ -20,6 +32,9 @@ const headerTemplate = function () {
 					<span class="logo-text">Guide</span>
 				</a>
 			</h1>
+		</div>
+		<div class="g-navi-func">
+			<button class="btn btn-menu" type="button" onclick="checkedWithin(this, '.g-navi-func')">메뉴</button>
 		</div>
 		<ul class="g-navi-list">
 			<li class="g-navi-item"><a href="index.html" class="g-navi-link">Page</a></li>
@@ -47,7 +62,17 @@ const headerTemplate = function () {
 		</ul>`;
 
 	return `
-        <div>${headerContent}</div>
+        <div class="g-navi-wrap">${headerContent}</div>
+    `;
+}
+
+const skipTemplate = function () {
+	let skipContent =
+		`<a href="#g-nav">메뉴 바로가기</a>
+		<a href="#g-container">본문 바로가기</a>`;
+
+	return `
+        <div class="skip-wrap">${skipContent}</div>
     `;
 }
 
@@ -152,5 +177,10 @@ function toggleEvent() {
 			toggleTarget.classList.toggle('active');
 		});
 	});
-    
+}
+
+function checkedWithin(selector, closestSelector) {
+	if (selector.type == 'button') {
+		selector.closest(closestSelector).classList.toggle("checked-within");
+	}
 }

@@ -79,16 +79,24 @@ $color-palettes: (
 $breakpoints: (
 	frame: 1920px,
 	container: 1360px,
-	breakpoint-xl: 2560px,
-	// laptop 4K
-	breakpoint-lg: 1440px,
-	// laptop
-	breakpoint-ml: 1280px,
-	// tablet
-	breakpoint-md: 1024px,
-	// tablet
-	breakpoint-sm: 768px,
-	// mobile
-	breakpoint-xs: 360px,
-	// mobile small
+	wide: 2560px,
+	laptop-l: 1440px,
+	laptop: 1280px,
+	tablet: 1024px,
+	mobile: 768px,
+	// mobile-m: 460px,
+	mobile-s: 360px,
+
+	// breakpoint-xl: 2560px,
+	// // laptop 4K
+	// breakpoint-lg: 1440px,
+	// // laptop
+	// breakpoint-ml: 1280px,
+	// // tablet
+	// breakpoint-md: 1024px,
+	// // tablet
+	// breakpoint-sm: 768px,
+	// // mobile
+	// breakpoint-xs: 360px,
+	// // mobile small
 );

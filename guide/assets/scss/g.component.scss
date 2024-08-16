@@ -204,10 +204,31 @@
 	.g-component-area {
 		padding: 20px;
 
-		.g-button-area {
+		.g-component-wrap {
 			display: flex;
-			gap: 12px;
-			align-items: center;
+			flex-direction: column;
+			flex-wrap: wrap;
+			gap: 16px;
+			align-items: flex-start;
+
+			.g-title-s {
+				flex: 1 1 100%;
+				// padding: 4px 12px;
+				// box-sizing: border-box;
+				// background-color: color(base, 90);
+
+				&:not(:first-child) {
+					margin-top: 12px
+					// padding-top: 12px;
+					// border-top: 1px solid color(base, 60);
+				}
+			}
+
+			.g-form-area {
+				display: flex;
+				gap: 16px;
+				width: 100%;
+			}
 		}
 	}
 }
@@ -249,4 +270,32 @@
 		// 	// border-top: 1px solid #efefef;
 		// }
 	}
+}
+
+.g-data-list {
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+
+	.data-item {
+        flex: 1 1 100%;
+		display: flex;
+		flex-direction: column;
+		row-gap: 8px;
+		position: relative;
+		padding-left: 16px;
+		box-sizing: border-box;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 16px;
+			height: 16px;
+			mask: icon(bullet-dot) no-repeat center/cover;
+			background-color: color(base, 0);
+		}
+    }
 }
