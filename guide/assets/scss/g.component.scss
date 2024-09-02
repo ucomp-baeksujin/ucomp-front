@@ -1,7 +1,11 @@
-@import 'g.include';
+@import 'include/_g.include';
 
 // 모든 요소
 .g-table-display {
+	&.scroll {
+		@include overflow-scroll(default, dark, large, x);
+	}
+
 	table {
         width: 100%;
 		border-collapse: collapse;
@@ -196,6 +200,12 @@
 	.hljs {
 		padding: 16px;
 	}
+
+	code {
+		font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+		font-size: 14px;
+		line-height: 1.3;
+	}
 }
 
 .g-component {
@@ -206,28 +216,28 @@
 
 		.g-component-wrap {
 			display: flex;
-			flex-direction: column;
 			flex-wrap: wrap;
-			gap: 16px;
+			gap: 8px;
 			align-items: flex-start;
 
 			.g-title-s {
 				flex: 1 1 100%;
-				// padding: 4px 12px;
-				// box-sizing: border-box;
-				// background-color: color(base, 90);
 
 				&:not(:first-child) {
 					margin-top: 12px
-					// padding-top: 12px;
-					// border-top: 1px solid color(base, 60);
 				}
 			}
 
 			.g-form-area {
 				display: flex;
-				gap: 16px;
+				gap: 8px;
 				width: 100%;
+			}
+
+			.g-button-area {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
 			}
 		}
 	}

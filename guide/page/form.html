@@ -11,8 +11,9 @@
 	<link rel="shortcut icon" href="../../guide/assets/images/app/favicon.ico">
 	
 	<link rel="stylesheet" href="../../guide/assets/css/g.component.css">
-	<link rel="stylesheet" href="../../guide/assets/css/g.page.css">
+	<link rel="stylesheet" href="../../guide/assets/css/g.layout.css">
 	<link rel="stylesheet" href="../../front/assets/css/front.component.css">
+	
 	
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 	<script src="../assets/js/include.js"></script>
@@ -34,10 +35,10 @@
 		<!-- //네비 영역 -->
 
 		<!-- 컨테이너 영역 -->
-		<div class="g-container" id="container">
-			<div class="g-content">
+		<div class="g-container" id="g-container">
+			<div class="g-content g-guide">
 				<div class="g-content-head">
-					<h2 class="g-heading-s"><em>컴포넌트 가이드</em></h2>
+					<h2 class="g-heading-s">컴포넌트 가이드</h2>
 				</div>
 				<div class="g-content-body">
 					<!-- element -->
@@ -66,12 +67,12 @@
 												<option value="#">default</option>
 											</select>
 										</span>
-										<span class="form select">
+										<span class="form select readonly">
 											<select name="select" id="select" class="form-elem" readonly>
 												<option value="#">readonly</option>
 											</select>
 										</span>
-										<span class="form select">
+										<span class="form select disabled">
 											<select name="select" id="select" class="form-elem" disabled>
 												<option value="#">disabled</option>
 											</select>
@@ -80,19 +81,19 @@
 									<h5 class="g-title-s">textarea</h5>
 									<div class="g-form-area">
 										<span class="form textarea">
-											<textarea name="textarea" id="textarea" class="form-elem" placeholder="default"></textarea>
+											<textarea name="textarea" id="textarea" class="form-elem" placeholder="default">default</textarea>
 											<p class="form-counter">
 												<span class="text-primary">0</span><span class="text-num">/100</span>
 											</p>
 										</span>
-										<span class="form textarea">
-											<textarea name="textarea" id="textarea" class="form-elem" placeholder="readonly" readonly></textarea>
+										<span class="form textarea readonly">
+											<textarea name="textarea" id="textarea" class="form-elem" placeholder="readonly">readonly</textarea>
 											<p class="form-counter">
 												<span class="text-primary">0</span><span class="text-num">/100</span>
 											</p>
 										</span>
-										<span class="form textarea">
-											<textarea name="textarea" id="textarea" class="form-elem" placeholder="disabled" disabled></textarea>
+										<span class="form textarea disabled">
+											<textarea name="textarea" id="textarea" class="form-elem" placeholder="disabled">disabled</textarea>
 											<p class="form-counter">
 												<span class="text-primary">0</span><span class="text-num">/100</span>
 											</p>
@@ -175,10 +176,42 @@
 									</div>
 									<div class="toggle-body">
 										<div class="g-code-box">
-<pre class="highlight-js">
-<code class="html">&lt;span class="form input"&gt;
-	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
-&lt;/span&gt;</code></pre>
+<pre class="highlight-js"><code class="html">&lt;span class="form input readonly disabled"&gt;&lt;input class="form-elem" type="text" readonly disabled /&gt;&lt;/span&gt;
+
+&lt;span class="form select readonly disabled"&gt;
+	&lt;select name="select" id="select" class="form-elem"&gt;
+		&lt;option value="#"&gt;default&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/span&gt;
+
+&lt;span class="form textarea readonly disabled"&gt;
+	&lt;textarea name="textarea" id="textarea" class="form-elem" placeholder="default" readonly disabled&gt;&lt;/textarea&gt;
+	&lt;p class="form-counter"&gt;
+		&lt;span class="text-primary">0&lt;/span>&lt;span class="text-num"&gt;/100&lt;/span&gt;
+	&lt;/p&gt;
+&lt;/span&gt;
+
+&lt;label class="form radio disabled"&gt;
+	&lt;input type="radio" name="radio" id="radio" class="form-elem" checked disabled /&gt;
+	&lt;span class="form-text"&gt;radio-a&lt;/span&gt;
+&lt;/label&gt;
+
+&lt;label class="form checkbox disabled"&gt;
+	&lt;input type="checkbox" name="checkbox" id="checkbox" class="form-elem" checked disabled /&gt;
+	&lt;span class="form-text">checkbox-a&lt;/span&gt;
+&lt;/label&gt;
+
+&lt;label class="form switch disabled"&gt;
+	&lt;input type="checkbox" class="form-elem" checked disabled /&gt;
+	&lt;span class="form-text">switch-a&lt;/span&gt;
+&lt;/label&gt;
+
+&lt;label class="file-upload-btn" for="fileInput01"&gt;
+	&lt;span class="form-text">첨부파일을 업로드해 주세요&lt;/span&gt;
+	&lt;a href="#" class="file-text"&gt;&lt;span class="file-name"&gt;업로드_후_파일명_노출&lt;/span&gt;&lt;span class="extension"&gt;첨부파일.pdf&lt;/span&gt;&lt;/a&gt;
+	&lt;button class="btn-delete" type="button" title="닫기"&gt;&lt;/button&gt;
+	&lt;input type="file" class="form-elem" id="fileInput01"&gt;
+&lt;/label&gt;</code></pre>
 										</div>
 									</div>
 								</div>
@@ -189,16 +222,19 @@
 
 					<!-- style -->
 					<section class="g-section">
-						<h4 class="g-heading-s">스타일</h4>
+						<h4 class="g-heading-s">스타일 (!작업!)</h4>
 						<div class="g-component">
 							<div class="g-component-area">
 								<div class="g-component-wrap">
 									<div class="form-group">
-										<span class="form-tit">타이틀</span>
+										<!-- <span class="form-tit">타이틀</span> -->
 										<span class="form input">
-											<input class="form-elem" type="text" placeholder="style-a">
+											<input class="form-elem" type="text" placeholder="placeholder">
 										</span>
-										<p class="form-noti">도움말</p>
+										<span class="form input">
+											<input class="form-elem" type="text" value="value">
+										</span>
+										<!-- <p class="form-noti">도움말</p> -->
 									</div>
 								</div>
 							</div>
@@ -227,15 +263,15 @@
 						<div class="g-component">
 							<div class="g-component-area">
 								<div class="g-component-wrap">
-									<div class="form-area">
+									<div class="g-form-area">
 										<span class="form input small">
-											<input class="form-elem" type="text" placeholder="small">
+											<input class="form-elem" type="text" placeholder="small" value="small" />
 										</span>
 										<span class="form input medium">
-											<input class="form-elem" type="text" placeholder="medium">
+											<input class="form-elem" type="text" placeholder="medium" value="medium" />
 										</span>
 										<span class="form input large">
-											<input class="form-elem" type="text" placeholder="large">
+											<input class="form-elem" type="text" placeholder="large" value="large" />
 										</span>
 									</div>
 								</div>
@@ -249,13 +285,13 @@
 										<div class="g-code-box">
 <pre class="highlight-js">
 <code class="html">&lt;span class="form input small"&gt;
-	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+	&lt;input class="form-elem" type="text" /&gt;
 &lt;/span&gt;
 &lt;span class="form input medium"&gt;
-	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+	&lt;input class="form-elem" type="text" /&gt;
 &lt;/span&gt;
 &lt;span class="form input large"&gt;
-	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+	&lt;input class="form-elem" type="text" /&gt;
 &lt;/span&gt;</code></pre>
 										</div>
 									</div>
@@ -265,57 +301,25 @@
 					</section>
 					<!-- //size -->
 
-					<!-- attributes -->
-					<section class="g-section">
-						<h4 class="g-heading-s">속성</h4>
-						<div class="g-component">
-							<div class="g-component-area">
-								<div class="g-component-wrap">
-									<div class="form-area">
-										<span class="form input"><input class="form-elem" type="text" placeholder="default" value="default" /></span>
-										<span class="form input readonly"><input class="form-elem" type="text" placeholder="readonly" value="readonly" readonly /></span>
-										<span class="form input disabled"><input class="form-elem" type="text" placeholder="Default" value="disabled" disabled /></span>
-									</div>
-								</div>
-							</div>
-							<div class="g-code-area g-toggle">
-								<div class="toggle-wrap">
-									<div class="toggle-head">
-										<button class="btn-toggle" type="button">코드 보기</button>
-									</div>
-									<div class="toggle-body">
-										<div class="g-code-box">
-<pre class="highlight-js">
-<code class="html">&lt;span class="form input small"&gt;
-	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
-&lt;/span&gt;
-&lt;span class="form input medium"&gt;
-	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
-&lt;/span&gt;
-&lt;span class="form input large"&gt;
-	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
-&lt;/span&gt;</code></pre>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- //attributes -->
-
 					<!-- vaild -->
 					<section class="g-section">
 						<h4 class="g-heading-s">유효성</h4>
 						<div class="g-component">
 							<div class="g-component-area">
 								<div class="g-component-wrap">
-									<span class="form input valid"><input class="form-elem" type="text" placeholder="valid" /></span>
-									<div class="form-noti">성공 문구가 노출됩니다.</div>
-									<span class="form input invalid"><input class="form-elem" type="text" placeholder="invalid" /></span>
-									<div class="form-noti">입력 형식이 올바르지 않습니다.</div>
-									<span class="form input invalid"><input class="form-elem" type="text" placeholder="invalid" /></span>
-									<div class="form-validator">
-										<span class="eng valid">영문</span><span class="num invalid">숫자</span><span class="characters">특수문자</span><span class="length">10자 이상 15자 이하</span>
+									<div class="form-area">
+										<span class="form input valid"><input class="form-elem" type="text" value="valid" /></span>
+										<div class="form-noti">성공 문구가 노출됩니다.</div>
+									</div>
+									<div class="form-area">
+										<span class="form input invalid"><input class="form-elem" type="text" value="invalid" /></span>
+										<div class="form-noti">입력 형식이 올바르지 않습니다.</div>
+									</div>
+									<div class="form-area">
+										<span class="form input invalid"><input class="form-elem" type="text" value="invalid" /></span>
+										<div class="form-validator">
+											<span class="eng valid">영문</span><span class="num invalid">숫자</span><span class="characters">특수문자</span><span class="length">10자 이상 15자 이하</span>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -327,14 +331,20 @@
 									<div class="toggle-body">
 										<div class="g-code-box">
 <pre class="highlight-js">
-<code class="html">&lt;span class="form input small"&gt;
-	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+<code class="html">&lt;span class="form input valid"&gt;
+	&lt;input class="form-elem" type="text" /&gt;
 &lt;/span&gt;
-&lt;span class="form input medium"&gt;
-	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+&lt;span class="form input invalid"&gt;
+	&lt;input class="form-elem" type="text" /&gt;
 &lt;/span&gt;
-&lt;span class="form input large"&gt;
-	&lt;input class="form-elem" type="text" placeholder="style-a"&gt;
+&lt;span class="form input invalid"&gt;
+	&lt;input class="form-elem" type="text" /&gt;
+	&lt;div class="form-validator"&gt;
+		&lt;span class="eng valid"&gt;영문&lt;/span&gt;
+		&lt;span class="num invalid"&gt;숫자&lt;/span&gt;
+		&lt;span class="characters"&gt;특수문자&lt;/span&gt;
+		&lt;span class="length"&gt;10자 이상 15자 이하&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/span&gt;</code></pre>
 										</div>
 									</div>

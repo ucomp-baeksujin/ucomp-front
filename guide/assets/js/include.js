@@ -8,13 +8,12 @@ window.onload = function () {
 	if (skipElement) {
 		skipElement.insertAdjacentHTML('afterbegin', skipTemplate());
 	}
-
-	// const footerElement = document.querySelector('#g-footer');
-	// if (footerElement) {
-	// 	footerElement.insertAdjacentHTML('afterbegin', headerTemplate());
-	// }
-
+	
 	toggleEvent();
+	naviEvent();
+	activateGnb();
+
+	
 }
 
 const headerTemplate = function () {
@@ -37,26 +36,144 @@ const headerTemplate = function () {
 			<button class="btn btn-menu" type="button" onclick="checkedWithin(this, '.g-navi-func')">메뉴</button>
 		</div>
 		<ul class="g-navi-list">
-			<li class="g-navi-item"><a href="index.html" class="g-navi-link">Page</a></li>
-			<li class="g-navi-item">
-				<span class="g-navi-subject">Style</span>
+			<li class="g-navi-item guide" data-navi="g-guide">
+				<button type="button" class="g-navi-subject">Guide</button>
 				<ul class="g-sub-list">
-					<li class="g-sub-item"><a href="style.html#container" class="g-sub-link" onclick="return hashtag(this);">Layout</a></li>
-					<li class="g-sub-item"><a href="style.html#typography" class="g-sub-link" onclick="return hashtag(this);">Typography</a></li>
-					<li class="g-sub-item"><a href="style.html#color" class="g-sub-link" onclick="return hashtag(this);">Color</a></li>
-					<li class="g-sub-item"><a href="style.html#icon" class="g-sub-link" onclick="return hashtag(this);">Icon</a></li>
+					<li class="g-sub-item">
+						<dl class="g-sub-wrap">
+							<dt class="g-sub-title">Style</dt>
+							<dd class="g-sub-name"><a href="style.html#gContainer" class="g-sub-link">Layout</a></dd>
+							<dd class="g-sub-name"><a href="style.html#typography" class="g-sub-link">Typography</a></dd>
+							<dd class="g-sub-name"><a href="style.html#color" class="g-sub-link">Color</a></dd>
+							<dd class="g-sub-name"><a href="style.html#icon" class="g-sub-link">Icon</a></dd>
+						</dl>
+						<dl class="g-sub-wrap">
+							<dt class="g-sub-title">Component</dt>
+							<dd class="g-sub-name"><a href="structure.html" class="g-sub-link">Structure</a></dd>
+							<dd class="g-sub-name"><a href="button.html" class="g-sub-link">Button</a></dd>
+							<dd class="g-sub-name"><a href="form.html" class="g-sub-link">Form</a></dd>
+							<dd class="g-sub-name"><a href="tab.html" class="g-sub-link">Tab</a></dd>
+							<dd class="g-sub-name"><a href="table.html" class="g-sub-link">Table</a></dd>
+							<dd class="g-sub-name"><a href="pagination.html" class="g-sub-link">Pagination</a></dd>
+							<dd class="g-sub-name"><a href="popup.html" class="g-sub-link">Popup</a></dd>
+						</dl>
+					</li>
 				</ul>
 			</li>
-			<li class="g-navi-item">
-				<span class="g-navi-subject">Component</span>
+			<li class="g-navi-item page" data-navi="g-pages">
+				<button type="button" class="g-navi-subject">Pages</button>
 				<ul class="g-sub-list">
-					<li class="g-sub-item"><a href="structure.html" class="g-sub-link">Structure</a></li>
-					<li class="g-sub-item"><a href="button.html" class="g-sub-link">Button</a></li>
-					<li class="g-sub-item"><a href="form.html" class="g-sub-link">Form</a></li>
-					<li class="g-sub-item"><a href="tab.html" class="g-sub-link">Tab</a></li>
-					<li class="g-sub-item"><a href="table.html" class="g-sub-link">Table</a></li>
-					<li class="g-sub-item"><a href="pagination.html" class="g-sub-link">Pagination</a></li>
-					<li class="g-sub-item"><a href="popup.html" class="g-sub-link">Popup</a></li>
+					<li class="g-sub-item">
+						<dl class="g-sub-wrap">
+							<dt class="g-sub-title">main</dt>
+							<dd class="g-sub-name"><a href="pages.html?page=main/index.html" class="g-sub-link">index</a></dd>
+						</dl>
+					</li>
+					<li class="g-sub-item">
+						<dl class="g-sub-wrap">
+							<dt class="g-sub-title">login</dt>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+						</dl>
+					</li>
+					<li class="g-sub-item">
+						<dl class="g-sub-wrap">
+							<dt class="g-sub-title">login</dt>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+						</dl>
+					</li>
+					<li class="g-sub-item">
+						<dl class="g-sub-wrap">
+							<dt class="g-sub-title">login</dt>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+						</dl>
+					</li>
+					<li class="g-sub-item">
+						<dl class="g-sub-wrap">
+							<dt class="g-sub-title">login</dt>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+						</dl>
+					</li>
+					<li class="g-sub-item">
+						<dl class="g-sub-wrap">
+							<dt class="g-sub-title">login</dt>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+						</dl>
+					</li>
+					<li class="g-sub-item">
+						<dl class="g-sub-wrap">
+							<dt class="g-sub-title">login</dt>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+						</dl>
+					</li>
+					<li class="g-sub-item">
+						<dl class="g-sub-wrap">
+							<dt class="g-sub-title">login</dt>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_01.html" class="g-sub-link">login_01</a></dd>
+							<dd class="g-sub-name"><a href="pages.html?page=login/login_02.html" class="g-sub-link">login_02</a></dd>
+						</dl>
+					</li>
 				</ul>
 			</li>
 		</ul>`;
@@ -76,97 +193,82 @@ const skipTemplate = function () {
     `;
 }
 
-// function activateGnb() {
-// 	// 현재 페이지의 body 클래스 확인
-// 	// var bodyClass = document.body.className;
-// 	var contentDiv = document.querySelector('.g-content');
-// 	var contentClassList = contentDiv ? contentDiv.classList : [];
+function activateGnb() {
+	var contentDiv = document.querySelector('.g-content');
+	var contentClassList = contentDiv ? contentDiv.classList : [];
+	var targetClass = contentClassList[1];
+	
+	if (!targetClass) return;
 
-// 	// GNB 항목들 가져오기
-// 	var gnbLinks = document.querySelectorAll('.g-sub-link');
+	var setElems  = document.querySelectorAll('.g-navi-item');
 
-// 	// 각 GNB 링크의 href 확인 및 활성화
-// 	gnbLinks.forEach(function (link) {
-// 		var href = link.getAttribute('href');
-// 		var pageName = href.substring(0, href.lastIndexOf('.')); 
-// 		if (contentClassList.contains(pageName)) {
-// 			link.classList.add('active');
-// 		}
-// 	});
-// }
+	setElems.forEach(function(setElem) {
+		var dataNavi = setElem.getAttribute('data-navi');
 
-function hashtag (link) {
-	var href = link.getAttribute('href');
-	var hashIndex = href.indexOf('#');
-
-	// 해시가 없는 경우, 기본 동작을 수행 (return true 를 반환)
-	if (hashIndex === -1) {
-		return true;
-	}
-
-	var hash = href.substring(hashIndex);
-	var targetId = hash.substring(1);
-	var targetElement = document.getElementById(targetId);
-
-	if (window.location.pathname === link.pathname && targetElement) {
-		var targetPosition = targetElement.offsetTop;
-		window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-
-		// var gnbLinks = document.querySelectorAll('.g-sub-link');
-		// gnbLinks.forEach(function (gnbLink) {
-		// 	gnbLink.classList.remove('active');
-		// });
-
-		// link.classList.add('active');
-
-		return false;
-	}
-
-	return true;
+		if(targetClass === dataNavi) {
+			setElem.classList.add('active');
+		} else {
+			setElem.classList.remove('active');
+		}
+	});
 }
 
-// function activelink() {
-// 	var gnbLinks = document.querySelectorAll('.g-sub-link');
-//     gnbLinks.forEach(function (link) {
-//         link.addEventListener('click', function () {
-//             gnbLinks.forEach(function (activeLink) {
-//                 activeLink.classList.remove('active');
-//             });
+function naviEvent() {
+	var toggleBtns = document.querySelectorAll('.g-navi-subject');
+	var subToggleLinks = document.querySelectorAll('.g-sub-link');
+	
+	toggleBtns.forEach(function (toggleBtn) {
+		toggleBtn.addEventListener('click', function () {
+			var toggleTarget = toggleBtn.closest('.g-navi-item');
+			var siblingElems = toggleTarget.parentElement.children;
 
-//             this.classList.add('active');
-//         });
-//     });
-// }
+			Array.from(siblingElems).forEach(function (sibling) {
+				if (sibling !== toggleTarget) {
+					sibling.classList.remove('active');
+				}
+			});
+			
+			toggleTarget.classList.toggle('active');
+		});
+	});
 
-// function hashtag(link) {
-// 	var href = link.getAttribute('href');
-// 	var hashIndex = href.indexOf('#');
+	subToggleLinks.forEach(subToggleLink => {
+		subToggleLink.addEventListener('click', function (event) {
+			const targetUrl = this.getAttribute('href'); 
+			const [url, hash] = targetUrl.split('#');
 
-// 	// 해시가 없는 경우, 기본 동작을 수행 (return true 를 반환)
-// 	if (hashIndex === -1) {
-// 		return true;
-// 	}
+			if (hash) {
+				event.preventDefault();
+				if (window.location.pathname.includes(url)) {
+					const targetElement = document.getElementById(hash);
+					if (targetElement) {
+						const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+						window.scrollTo({
+							top: elementPosition,
+							behavior: "smooth"
+						});
+					}
+				} else {
+					window.location.href = targetUrl;
+				}
+			}
+		});
+	});
 
-// 	var hash = href.substring(hashIndex);
-// 	var targetId = hash.substring(1);
-// 	var targetElement = document.getElementById(targetId);
-
-// 	if (window.location.pathname === link.pathname && targetElement) {
-// 		var targetPosition = targetElement.offsetTop;
-// 		window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-
-// 		var gnbLinks = document.querySelectorAll('.g-sub-link');
-// 		gnbLinks.forEach(function (gnbLink) {
-// 			gnbLink.classList.remove('active');
-// 		});
-
-// 		link.classList.add('active');
-
-// 		return false;
-// 	}
-
-// 	return true;
-// }
+	// window.scrollTo(0, 0);
+	// var hash = window.location.hash;
+	// console.log(window.location.hash);
+	// if (hash) {
+	// 	var targetElement = document.querySelector(hash);
+	// 	if (targetElement) {
+	// 		var elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+	// 		window.scrollTo({
+	// 			top: elementPosition,
+	// 			behavior: "smooth" // 스크롤 애니메이션을 위해 'smooth' 사용
+	// 		});
+	// 	}
+	// }
+}
 
 function toggleEvent() {
 	var toggleBtns = document.querySelectorAll('.g-toggle .btn-toggle');
@@ -184,3 +286,5 @@ function checkedWithin(selector, closestSelector) {
 		selector.closest(closestSelector).classList.toggle("checked-within");
 	}
 }
+
+

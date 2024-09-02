@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>GUIDE - front</title>
+	
+	<link rel="shortcut icon" href="../../guide/assets/images/app/favicon.ico">
+	
+	<link rel="stylesheet" href="../../guide/assets/css/g.component.css">
+	<link rel="stylesheet" href="../../guide/assets/css/g.layout.css">
+	<link rel="stylesheet" href="../../front/assets/css/front.component.css">
+	
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="../assets/js/include.js"></script>
+	<script src="../../front/assets/js/ui.common.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>
+		$(document).ready(function() {
+			const urlParams = new URLSearchParams(window.location.search);
+			const page = urlParams.get('page');
+			const origin = location.origin;
+			let url = '';
+
+			if (location.host === '') {
+				url = `../../front/page/${ page }`;
+				$('#gFrame').attr('src', url);
+			} else {
+				url = `${ origin }/front/page/${ page }`;
+				document.querySelector('#gFrame').src = url;
+				const heading = $('.g-heading-s');
+				const pageName = heading.append("<span class='em'></span>");
+				$('.em').text(page);
+			}
+		});
+	</script>
+</head>
+<body>
+	<div id="g-wrap">
+		<!-- 헤더 영역 -->
+		<!-- <header id="g-header"></header> -->
+		<!-- //헤더 영역 -->
+
+		<!-- 네비 영역 -->
+		<nav id="g-navi">
+		</nav>
+		<!-- //네비 영역 -->
+
+		<!-- 컨테이너 영역 -->
+		<div class="g-container" id="g-container">
+			<div class="g-content g-pages">
+				<div class="g-content-head">
+					<h2 class="g-heading-s">미리보기 화면</h2>
+				</div>
+				<div class="g-content-body">
+					<div class="g-iframe-area">
+						<iframe src="" frameborder="0" id="gFrame" name="gFrame"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //컨테이너 영역 -->
+	</div>
+</body>
+</html>

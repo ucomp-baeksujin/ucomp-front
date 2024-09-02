@@ -1,7 +1,5 @@
 @import '_variables';
 
-// reset, base, color, typography
-
 /********************************************************************************************************************************
 
  * Web Font
@@ -134,7 +132,7 @@ textarea, select {
 	border-radius: 0;
 	appearance: none;
 
-	&:focus { outline: none; }
+	// &:focus { outline: none; }
 }
 
 button {

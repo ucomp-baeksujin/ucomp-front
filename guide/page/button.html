@@ -11,7 +11,7 @@
 	<link rel="shortcut icon" href="../../guide/assets/images/app/favicon.ico">
 	
 	<link rel="stylesheet" href="../../guide/assets/css/g.component.css">
-	<link rel="stylesheet" href="../../guide/assets/css/g.page.css">
+	<link rel="stylesheet" href="../../guide/assets/css/g.layout.css">
 	<link rel="stylesheet" href="../../front/assets/css/front.component.css">
 	
 	<script src="../assets/js/include.js"></script>
@@ -32,10 +32,10 @@
 		<!-- //네비 영역 -->
 
 		<!-- 컨테이너 영역 -->
-		<div class="g-container" id="container">
-			<div class="g-content">
+		<div class="g-container" id="g-container">
+			<div class="g-content g-guide">
 				<div class="g-content-head">
-					<h2 class="g-heading-s"><em>컴포넌트 가이드</em></h2>
+					<h2 class="g-heading-s">컴포넌트 가이드</h2>
 				</div>
 				<div class="g-content-body">
 					<!-- style -->
@@ -45,11 +45,11 @@
 						<div class="g-component">
 							<div class="g-component-area">
 								<div class="g-component-wrap">
-									<div class="button-area">
+									<div class="g-button-area">
 										<button class="btn-a">Default</button>
-										<button class="btn-a primary">Primary</button>
-										<button class="btn-a secondary">Secondary</button>
-										<button class="btn-a tertiary type-line">tertiary</button>
+										<button class="btn-a first">first</button>
+										<button class="btn-a second">second</button>
+										<button class="btn-a third type-line">third</button>
 										<button class="btn-a disabled">Disabled</button>
 									</div>
 								</div>
@@ -78,12 +78,12 @@
 						<div class="g-component">
 							<div class="g-component-area">
 								<div class="g-component-wrap">
-									<div class="button-area">
-										<button class="btn-a x-small">x-small</button>
+									<div class="g-button-area">
+										<!-- <button class="btn-a x-small">x-small</button> -->
 										<button class="btn-a small">small</button>
 										<button class="btn-a medium">medium</button>
 										<button class="btn-a large">large</button>
-										<button class="btn-a x-large">x-large</button>
+										<!-- <button class="btn-a x-large">x-large</button> -->
 									</div>
 								</div>
 							</div>
@@ -95,11 +95,9 @@
 									<div class="toggle-body">
 										<div class="g-code-box">
 <pre class="highlight-js">
-<code class="html">&lt;button class="btn-a x-small"&gt;x-small&lt;/button&gt;
-&lt;button class="btn-a small"&gt;small&lt;/button&gt;
+<code class="html">&lt;button class="btn-a small"&gt;small&lt;/button&gt;
 &lt;button class="btn-a medium"&gt;medium&lt;/button&gt;
-&lt;button class="btn-a large"&gt;large&lt;/button&gt;
-&lt;button class="btn-a x-large"&gt;x-large&lt;/button&gt;</code></pre>
+&lt;button class="btn-a large"&gt;large&lt;/button&gt;</code></pre>
 										</div>
 									</div>
 								</div>
@@ -114,12 +112,10 @@
 						<div class="g-component">
 							<div class="g-component-area">
 								<div class="g-component-wrap">
-									<div class="button-area">
-										<button class="btn-a x-small ico-pin">x-small</button>
+									<div class="g-button-area">
 										<button class="btn-a small ico-pin">small</button>
 										<button class="btn-a medium ico-pin">medium</button>
-										<button class="btn-a large ico-pin">large</button>
-										<button class="btn-a x-large ico-pin-ltr">x-large</button>
+										<button class="btn-a large ico-pin-rtl disabled">large</button>
 									</div>
 								</div>
 							</div>
@@ -131,11 +127,9 @@
 									<div class="toggle-body">
 										<div class="g-code-box">
 <pre class="highlight-js">
-<code class="html">&lt;button class="btn-a x-small ico-pin"&gt;x-small&lt;/button&gt;
-&lt;button class="btn-a small ico-pin"&gt;small&lt;/button&gt;
+<code class="html">&lt;button class="btn-a small ico-pin"&gt;small&lt;/button&gt;
 &lt;button class="btn-a medium ico-pin"&gt;medium&lt;/button&gt;
-&lt;button class="btn-a large ico-pin"&gt;large&lt;/button&gt;
-&lt;button class="btn-a x-large ico-pin"&gt;x-large&lt;/button&gt;</code></pre>
+&lt;button class="btn-a large ico-pin-rtl"&gt;large&lt;/button&gt;</code></pre>
 										</div>
 									</div>
 								</div>
@@ -150,7 +144,7 @@
 						<div class="g-component">
 							<div class="g-component-area">
 								<div class="g-component-wrap">
-									<div class="button-area">
+									<div class="g-button-area">
 										<button class="btn-a btn-text medium">텍스트 버튼</button>
 										<button class="btn-a btn-text underline">텍스트 밑줄 버튼</button>
 										<a href="#" class="btn-a btn-text link">텍스트 링크</a>
@@ -185,11 +179,11 @@
 						<h4 class="g-heading-s">정렬 <span class="em">&#40;*기본 중앙정렬&#41;</span></h4>
 						<div class="g-component">
 							<div class="g-component-area">
-								<div class="button-display align-a">
-									<span class="button-area"><button class="btn-a">align-a</button></span>
+								<div class="button-display align-lt">
+									<span class="g-button-area"><button class="btn-a">align-a</button></span>
 								</div>
-								<div class="button-display align-b">
-									<span class="button-area"><button class="btn-a">align-b</button></span>
+								<div class="button-display align-rt">
+									<span class="g-button-area"><button class="btn-a">align-b</button></span>
 								</div>
 							</div>
 							<div class="g-code-area g-toggle">
@@ -200,8 +194,8 @@
 									<div class="toggle-body">
 										<div class="g-code-box">
 <pre class="highlight-js">
-<code class="html">&lt;div class="button-display align-a"&gt;&lt;span class="button-area"&gt;&lt;button class="btn-a"&gt;align-a&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;div class="button-display align-b"&gt;&lt;span class="button-area"&gt;&lt;button class="btn-a"&gt;align-b&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;</code></pre>
+<code class="html">&lt;div class="button-display align-lt"&gt;&lt;span class="g-button-area"&gt;&lt;button class="btn-a"&gt;align-a&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="button-display align-rt"&gt;&lt;span class="g-button-area"&gt;&lt;button class="btn-a"&gt;align-b&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;</code></pre>
 										</div>
 									</div>
 								</div>

@@ -11,7 +11,7 @@
 	<link rel="shortcut icon" href="../../guide/assets/images/app/favicon.ico">
 	
 	<link rel="stylesheet" href="../../guide/assets/css/g.component.css">
-	<link rel="stylesheet" href="../../guide/assets/css/g.page.css">
+	<link rel="stylesheet" href="../../guide/assets/css/g.layout.css">
 	<link rel="stylesheet" href="../../front/assets/css/front.component.css">
 	
 	<script src="../assets/js/include.js"></script>
@@ -27,10 +27,10 @@
 		<!-- //네비 영역 -->
 
 		<!-- 컨테이너 영역 -->
-		<div class="g-container" id="container">
-			<div class="g-content">
+		<div class="g-container" id="gContainer">
+			<div class="g-content g-guide" id="gContent">
 				<div class="g-content-head">
-					<h2 class="g-heading-s"><em>스타일 가이드</em></h2>
+					<h2 class="g-heading-s">스타일 가이드</h2>
 				</div>
 				<div class="g-content-body">
 					<!-- layout -->
@@ -51,12 +51,12 @@
 								</thead>
 								<tbody>
 									<tr>
-										<th>PC/Desktop 4K</th>
+										<th>Wide(Desktop 4K)</th>
 										<td>2560 ~ 1921px</td>
 										<td>2560x1440</td>
 									</tr>
 									<tr>
-										<th>PC/Desktop</th>
+										<th>Laptop(PC/Desktop)</th>
 										<td>1920 ~ 1024px</td>
 										<td>1920x1080</td>
 									</tr>
@@ -80,7 +80,7 @@
 					<section class="g-section" id="typography">
 						<h3 class="g-heading-m">서체<span class="em">&#40;Typography&#41;</span></h3>
 						<p class="g-title-s">Typeface <span class="em">Font Style의 정의는 서로 다를 수 있습니다. 해당 사이트에서는 기본 글꼴로 국문과 영문 모두 Pretendard Variable를 사용합니다.</span></p>
-						<div class="g-table-display">
+						<div class="g-table-display scroll">
 							<table>
 								<colgroup>
 									<col>

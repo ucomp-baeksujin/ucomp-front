@@ -1,6 +1,10 @@
-@import 'front.include';
+// 모든 요소
+@import 'common/_base';
+@import 'common/_vendor';
 
-// header, footer, navigation
+@import '_front.include';
+
+// header, footer, navigation, skip
 .skip {
 	position: fixed;
 	top: -50px;

@@ -53,6 +53,10 @@ $iconList: (
 		size: "24 24",
 		path: "fill='none' stroke='rgba(0,0,0,1)' stroke-linecap='square' stroke-width='1.5' d='m17.362 8.5-7.16 7.2L7 12.497'"
 	),
+	close: (
+		size: "24 24",
+		path: "fill='rgba(0,0,0,1)' fill-rule='evenodd' d='m10.94 12-4.774 4.773 1.061 1.06L12 13.062l4.773 4.773 1.06-1.061L13.062 12l4.773-4.773-1.061-1.06L12 10.938 7.227 6.166l-1.06 1.061L10.938 12Z' clip-rule='evenodd'"
+	),
 	// name: (
 	// 	size: "24 24",
 	// 	path: "fill='rgba(0,0,0,1)' fill-rule='evenodd' d='' clip-rule='evenodd'"
@@ -76,3 +80,15 @@ $iconList: (
 
 // &.icon-check {
 // 	mask-image: icon(check);
+
+/********************************************************************************************************************************
+
+ * button
+
+********************************************************************************************************************************/
+.btn {
+	&[class*=ico-pin] { &::before, &::after { mask-image: icon(g-pin, color(base, 100)); } }
+	&[class*=ico-close] { &::before, &::after { mask-image: icon(g-pin, color(base, 100)); } }
+	// &-a {
+	// }
+}
